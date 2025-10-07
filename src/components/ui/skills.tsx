@@ -22,27 +22,25 @@ const svgIcons = [
 
 export const Skills = () => {
   return (
-    <Container>
+    <div>
       <div className="flex flex-col pt-5">
-        <h1 className="text-primary text-2xl font-bold tracking-tight text-shadow-md">
+        <h1 className="text-2xl font-bold tracking-tight text-black text-shadow-md">
           Skills
         </h1>
         <div className="relative py-5">
-          <div className="border-t border-b border-gray-200 mask-r-from-80% mask-l-from-80%">
-            <div className="mx-auto flex w-fit border-l border-gray-200 bg-gray-50">
+          <div className="border-t border-b border-dashed border-gray-300 mask-r-from-90% mask-l-from-90%">
+            <div className="mx-auto flex w-fit border-l border-dashed border-gray-300">
               {svgIcons.map((item, idx) => (
                 <div
                   key={idx}
-                  className="relative flex h-13 w-13 items-center justify-center border-r border-gray-200"
+                  className="relative flex h-13 w-13 items-center justify-center border-r border-dashed border-gray-300"
                 >
-                  {/* Icon with hover animation */}
                   <motion.div
-                    whileHover={{
-                      y: -6,
-                      scale: 1.1,
-                      transition: { duration: 0.3 },
-                    }}
+                    initial={{ opacity: 0, filter: "blur(10px), y:10" }}
+                    whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
                     transition={{
+                      duration: 0.3,
+                      delay: idx * 0.1,
                       ease: "easeInOut",
                     }}
                     className="flex items-center justify-center"
@@ -61,6 +59,6 @@ export const Skills = () => {
           </div>
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
