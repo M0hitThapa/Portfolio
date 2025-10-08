@@ -1,8 +1,13 @@
+"use client";
 import Link from "next/link";
 import { MotionImage } from "./motion-image";
 import Container from "../container";
+import { motion } from "motion/react";
+import { useState } from "react";
 
 export const Hero = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div className="relative w-full bg-gray-50 px-5">
       {/* Noise Texture (Darker Dots) Background */}
@@ -16,16 +21,34 @@ export const Hero = () => {
         }}
       />
       <div className="relative flex items-center justify-between pb-4 md:pt-5">
-        <MotionImage
-          initial={{ opacity: 0, filter: "blur(10px)" }}
-          whileInView={{ opacity: 1, filter: "blur(0px)" }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-          src="/profile.jpeg"
-          alt="profile"
-          height={140}
-          width={140}
-          className="shadow-input rounded-full border-2 border-neutral-100"
-        />
+        <motion.div
+          onClick={() => setIsHovered(!isHovered)}
+          animate={{
+            rotate: isHovered ? 360 : 0,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 200,
+            damping: 10,
+            mass: 0.8,
+          }}
+          className="cursor-pointer"
+        >
+          <MotionImage
+            initial={{ opacity: 0, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            src={
+              isHovered
+                ? "https://i.pinimg.com/736x/83/70/28/837028b92264d54e1e177999791b60c0.jpg"
+                : "/profile.jpeg"
+            }
+            alt="profile"
+            height={140}
+            width={140}
+            className="shadow-input rounded-full border-2 border-neutral-100"
+          />
+        </motion.div>
         <div className="relative flex flex-col items-end justify-end">
           <h1 className="ibm-plex-serif-semibold-italic bg-gradient-to-r from-black to-neutral-500 bg-clip-text pt-2 pb-1 text-3xl tracking-tight text-transparent text-shadow-lg md:text-5xl">
             Mohit Thapa
@@ -35,12 +58,14 @@ export const Hero = () => {
           </p>
           <div className="flex gap-2 pt-2">
             <Link href="/github">
-              <svg
+              <motion.svg
                 viewBox="0 0 1024 1024"
                 fill="none"
                 width={30}
                 height={30}
-                className="shadow-input rounded bg-neutral-950 p-1 hover:backdrop:blur-2xl"
+                className="shadow-input rounded bg-neutral-950 p-1"
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
               >
                 <path
                   fillRule="evenodd"
@@ -49,35 +74,39 @@ export const Hero = () => {
                   transform="scale(64)"
                   fill="#fff"
                 />
-              </svg>
+              </motion.svg>
             </Link>
             <Link href="/linkedin">
-              <svg
+              <motion.svg
                 preserveAspectRatio="xMidYMid"
                 viewBox="0 0 256 256"
                 height={30}
                 width={30}
-                className="shadow-input rounded"
+                className="shadow-input rounded bg-white"
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
               >
                 <path
                   d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.907 39.907 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186l-.016 67.013ZM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009-.002-12.157 9.851-22.014 22.008-22.016 12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97v122.16ZM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453"
                   fill="#0A66C2"
                 />
-              </svg>
+              </motion.svg>
             </Link>
             <Link href="/twitter">
-              <svg
+              <motion.svg
                 fill="none"
                 viewBox="0 0 1200 1227"
                 height={30}
                 width={30}
                 className="shadow-input rounded bg-black p-1"
+                whileHover={{ scale: 1.2, rotate: -5 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
               >
                 <path
                   fill="#fff"
                   d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
                 />
-              </svg>
+              </motion.svg>
             </Link>
           </div>
         </div>

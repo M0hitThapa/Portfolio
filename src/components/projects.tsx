@@ -66,8 +66,8 @@ export const Projects = () => {
   ];
 
   return (
-    <div className="mx-auto max-w-6xl">
-      <h1 className="pb-5 text-2xl font-bold tracking-tight text-black">
+    <div className="mx-auto max-w-6xl pt-2">
+      <h1 className="font-title pb-3 text-2xl font-bold tracking-tight text-black">
         Projects
       </h1>
 
@@ -82,7 +82,7 @@ export const Projects = () => {
             {hovered === idx && (
               <motion.span
                 layoutId="hovered-span"
-                className="absolute inset-0 h-full w-full rounded-md bg-neutral-50"
+                className="absolute inset-0 h-full w-full rounded-md bg-[#F7F7F7]"
               />
             )}
             <div className="relative w-full">
@@ -140,7 +140,7 @@ export const Projects = () => {
                 <MagneticImage src={project.src} alt={project.title} />
 
                 <div className="relative flex flex-col items-start justify-center gap-2">
-                  <h1 className="flex gap-2 text-xl font-black">
+                  <h1 className="font-title flex gap-2 text-xl font-black">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="30"

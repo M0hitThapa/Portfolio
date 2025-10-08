@@ -14,12 +14,12 @@ const Navbar = () => {
     <Container className="border-r border-l border-gray-200">
       <div className="flex items-center justify-between border-b border-gray-100 p-3">
         <div className="flex items-end gap-2">
-          <h1 className="text-3xl font-black text-black text-shadow-md dark:text-neutral-100">
+          <h1 className="font-title text-3xl font-black text-black text-shadow-md dark:text-neutral-100">
             M.T
           </h1>
           <div className="flex gap-2">
             <p className="flex gap-1 font-medium tracking-tighter text-neutral-500">
-              <Mail className="size-5" />
+              <Mail className="size-5 text-neutral-700" />
               mohitthapa2058@gmail.com
             </p>
             <Copy className="size-4" />

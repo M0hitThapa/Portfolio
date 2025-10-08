@@ -12,10 +12,10 @@ export default function Home() {
         <Hero />
 
         <div className="flex flex-col items-start justify-start pt-2">
-          <h1 className="text-2xl font-bold tracking-tight text-black text-shadow-md">
+          <h1 className="font-title text-2xl font-bold tracking-tight text-black text-shadow-md">
             About
           </h1>
-          <p className="text-secondary pt-3 pr-10 text-base/7">
+          <p className="text-secondary pt-2 pr-5 text-base/7">
             I'm a passionate software engineer dedicated to crafting elegant
             solutions for complex problems. With expertise in full-stack
             development, I enjoy building user-centric applications that make a
