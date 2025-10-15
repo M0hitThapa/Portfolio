@@ -1,6 +1,7 @@
 "use client";
 import { motion, useSpring } from "motion/react";
 import { useState, useRef, useEffect } from "react";
+import Container from "./container";
 
 const spring = { damping: 3, stiffness: 50, restDelta: 0.001 };
 
@@ -66,12 +67,12 @@ export const Projects = () => {
   ];
 
   return (
-    <div className="mx-auto max-w-6xl pt-2">
-      <h1 className="font-title pb-3 text-2xl font-bold tracking-tight text-black">
+    <Container className="pt-2">
+      <h1 className="font-title px-5 pb-3 text-2xl font-bold tracking-tight text-black">
         Projects
       </h1>
 
-      <div className="flex flex-col border-t border-neutral-200">
+      <div className="flex flex-col border-t border-neutral-200 dark:border-neutral-900">
         {Projects.map((project, idx) => (
           <div
             className="relative w-full pt-5"
@@ -82,60 +83,15 @@ export const Projects = () => {
             {hovered === idx && (
               <motion.span
                 layoutId="hovered-span"
-                className="absolute inset-0 h-full w-full rounded-md bg-[#F7F7F7]"
+                className="absolute inset-0 h-full w-full rounded-md bg-[#ededed] dark:bg-[#0d0d0d]"
               />
             )}
             <div className="relative w-full">
               {/* Dashed Grid */}
-              <div
-                className="absolute inset-0 z-0"
-                style={{
-                  backgroundImage: `
-        linear-gradient(to right, #e7e5e4 1px, transparent 1px),
-        linear-gradient(to bottom, #e7e5e4 1px, transparent 1px)
-      `,
-                  backgroundSize: "20px 20px",
-                  backgroundPosition: "0 0, 0 0",
-                  maskImage: `
-        repeating-linear-gradient(
-          to right,
-          black 0px,
-          black 3px,
-          transparent 3px,
-          transparent 8px
-        ),
-        repeating-linear-gradient(
-          to bottom,
-          black 0px,
-          black 3px,
-          transparent 3px,
-          transparent 8px
-        )
-      `,
-                  WebkitMaskImage: `
-        repeating-linear-gradient(
-          to right,
-          black 0px,
-          black 3px,
-          transparent 3px,
-          transparent 8px
-        ),
-        repeating-linear-gradient(
-          to bottom,
-          black 0px,
-          black 3px,
-          transparent 3px,
-          transparent 8px
-        )
-      `,
-                  maskComposite: "intersect",
-                  WebkitMaskComposite: "source-in",
-                }}
-              />
 
               <div
                 key={project.title}
-                className="relative z-10 flex gap-10 border-b border-neutral-200 pb-5"
+                className="relative z-10 flex gap-10 border-b border-neutral-200 px-5 pb-5 dark:border-neutral-900"
               >
                 <MagneticImage src={project.src} alt={project.title} />
 
@@ -165,7 +121,7 @@ export const Projects = () => {
           </div>
         ))}
       </div>
-    </div>
+    </Container>
   );
 };
 
@@ -199,7 +155,7 @@ function MagneticImage({ src, alt }: { src: string; alt: string }) {
   }, [hovered, x, y]);
 
   return (
-    <div className="relative rounded border border-neutral-200 bg-white bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] p-3 shadow-lg [--pattern-fg:theme(colors.neutral.100)]">
+    <div className="relative rounded border border-neutral-200 bg-white bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] p-3 shadow-lg [--pattern-fg:theme(colors.neutral.100)] dark:border-neutral-900 dark:bg-black dark:[--pattern-fg:theme(colors.neutral.900)]">
       <motion.div
         ref={ref}
         style={{ x, y }}
@@ -216,7 +172,7 @@ function MagneticImage({ src, alt }: { src: string; alt: string }) {
         <img
           src={src}
           alt={alt}
-          className="relative z-10 h-48 w-auto rounded border border-white object-cover shadow-lg"
+          className="relative z-10 h-48 w-auto rounded border border-white object-cover shadow-lg dark:border-black"
         />
       </motion.div>
     </div>

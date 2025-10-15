@@ -41,7 +41,7 @@ export const Skills = () => {
 
   return (
     <div>
-      <div className="flex flex-col pt-2">
+      <div className="flex flex-col px-5 pt-4">
         <h1 className="font-title text-2xl font-bold tracking-tight text-black text-shadow-md">
           Skills
         </h1>
@@ -59,19 +59,24 @@ export const Skills = () => {
                 top: `${tooltipPosition.y - 40}px`,
               }}
             >
-              <div className="rounded bg-gray-900 px-3 py-1.5 text-xs font-semibold text-white shadow-lg">
+              <motion.div
+                initial={{ opacity: 0, filter: "blur(10px)" }}
+                whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="rounded bg-gray-900 px-3 py-1.5 text-xs font-semibold text-white shadow-lg"
+              >
                 {svgIcons[hoveredIndex].title}
                 <div className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-gray-900"></div>
-              </div>
+              </motion.div>
             </motion.div>
           )}
 
-          <div className="border-t border-b border-dashed border-gray-300 mask-r-from-85% mask-l-from-85%">
+          <div className="border-t border-b border-dashed border-neutral-200 mask-r-from-80% mask-l-from-80% dark:border-neutral-900">
             <div className="mx-auto flex w-fit border-l border-dashed border-gray-300">
               {svgIcons.map((item, idx) => (
                 <div
                   key={idx}
-                  className="relative flex h-13 w-13 cursor-pointer items-center justify-center border-r border-dashed border-gray-300"
+                  className="relative flex h-13 w-13 cursor-pointer items-center justify-center border-r border-dashed border-neutral-200 dark:border-neutral-900"
                   onMouseEnter={(e) => handleMouseEnter(idx, e)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
@@ -83,14 +88,14 @@ export const Skills = () => {
                       delay: idx * 0.1,
                       ease: "easeInOut",
                     }}
-                    className="flex items-center justify-center"
+                    className="flex items-center justify-center hover:bg-neutral-100 hover:backdrop:blur-sm dark:hover:bg-neutral-900"
                   >
                     <Image
                       src={item.icon}
                       alt={item.title}
                       height={45}
                       width={45}
-                      className="p-2"
+                      className="h-13 w-13 p-2"
                     />
                   </motion.div>
                 </div>

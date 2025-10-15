@@ -8,10 +8,10 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="flex min-h-screen items-start justify-start">
-      <Container className="min-h-[100vh] border-r border-l border-gray-200 p-5 md:pb-8">
+      <Container className="min-h-[100vh] border-r border-l border-gray-200 bg-white md:pb-8 dark:border-neutral-900 dark:bg-black">
         <Hero />
 
-        <div className="flex flex-col items-start justify-start pt-2">
+        <div className="flex flex-col items-start justify-start px-5 pt-4">
           <h1 className="font-title text-2xl font-bold tracking-tight text-black text-shadow-md">
             About
           </h1>

@@ -1,6 +1,7 @@
 import Container from "../container";
 import Link from "next/link";
-import { Copy, Mail } from "lucide-react";
+import { Copy, Dot, Mail } from "lucide-react";
+import { ModeToggle } from "../mode-toggle";
 
 const Navbar = () => {
   const navItems = [
@@ -11,30 +12,26 @@ const Navbar = () => {
   ];
 
   return (
-    <Container className="border-r border-l border-gray-200">
-      <div className="flex items-center justify-between border-b border-gray-100 p-3">
+    <Container className="border-r border-l border-gray-200 bg-white dark:border-neutral-900 dark:bg-black">
+      <div className="flex items-center justify-between border-b border-gray-200 px-5 py-3 dark:border-neutral-900">
         <div className="flex items-end gap-2">
           <h1 className="font-title text-3xl font-black text-black text-shadow-md dark:text-neutral-100">
             M.T
           </h1>
-          <div className="flex gap-2">
-            <p className="flex gap-1 font-medium tracking-tighter text-neutral-500">
-              <Mail className="size-5 text-neutral-700" />
-              mohitthapa2058@gmail.com
-            </p>
-            <Copy className="size-4" />
-          </div>
         </div>
-        <div className="flex gap-2 text-base/7 font-medium text-neutral-700 dark:text-neutral-300">
-          {navItems.map((item, idx) => (
-            <Link
-              key={idx}
-              className="rounded-md px-2 py-1 transition-all duration-300 hover:bg-neutral-100"
-              href={item.link}
-            >
-              {item.title}
-            </Link>
-          ))}
+        <div className="flex items-center justify-center gap-2">
+          <div className="flex gap-2 text-base/7 font-medium text-neutral-700 dark:text-neutral-300">
+            {navItems.map((item, idx) => (
+              <Link
+                key={idx}
+                className="rounded-md px-2 py-1 transition-all duration-300 hover:bg-neutral-100"
+                href={item.link}
+              >
+                {item.title}
+              </Link>
+            ))}
+          </div>
+          <ModeToggle />
         </div>
       </div>
     </Container>
@@ -42,3 +39,13 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+{
+  /* <div className="flex gap-2">
+            <p className="flex gap-1 font-medium tracking-tighter text-neutral-500">
+              <Mail className="size-5 text-neutral-700" />
+              mohitthapa2058@gmail.com
+            </p>
+            <Copy className="size-4" />
+          </div> */
+}

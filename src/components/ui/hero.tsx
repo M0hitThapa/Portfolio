@@ -4,23 +4,16 @@ import { MotionImage } from "./motion-image";
 import Container from "../container";
 import { motion } from "motion/react";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 export const Hero = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="relative w-full bg-gray-50 px-5">
+    <div className="relative w-full">
       {/* Noise Texture (Darker Dots) Background */}
-      <div
-        className="absolute inset-0 z-0 backdrop:backdrop-blur-md"
-        style={{
-          background: "#FFFFFF", // bg-gray-50
-          backgroundImage:
-            "radial-gradient(circle at 1px 1px, #EEEEEE 1px, transparent 0)", // neutral-200
-          backgroundSize: "10px 10px",
-        }}
-      />
-      <div className="relative flex items-center justify-between pb-4 md:pt-5">
+      <div className="border-edge screen-line-before screen-line-after absolute aspect-2/1 h-48 w-full bg-zinc-950/0.25 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] select-none [--pattern-foreground:var(--color-zinc-950)]/5 after:-bottom-px dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5" />
+      <div className="relative flex items-center justify-between px-5 pb-4 md:pt-5">
         <motion.div
           onClick={() => setIsHovered(!isHovered)}
           animate={{
@@ -46,17 +39,72 @@ export const Hero = () => {
             alt="profile"
             height={140}
             width={140}
-            className="shadow-input rounded-full border-2 border-neutral-100"
+            className="shadow-input rounded-full border-2 border-neutral-100 dark:border-neutral-950"
           />
         </motion.div>
         <div className="relative flex flex-col items-end justify-end">
-          <h1 className="ibm-plex-serif-semibold-italic bg-gradient-to-r from-black to-neutral-500 bg-clip-text pt-2 pb-1 text-3xl tracking-tight text-transparent text-shadow-lg md:text-5xl">
+          <h1 className="ibm-plex-serif-semibold-italic pt-2 pb-1 text-3xl tracking-tight text-black text-shadow-lg md:text-5xl dark:text-white">
             Mohit Thapa
           </h1>
           <p className="shadow-input max-w-lg rounded-md bg-neutral-900 px-2 py-1 font-bold text-white md:text-sm">
             &lt;👋Design Engineer&gt;
           </p>
           <div className="flex gap-2 pt-2">
+            <Link href="/github">
+              <svg
+                height="28"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                version="1.1"
+                width="28"
+                data-view-component="true"
+                className="text-[#1F2328]"
+              >
+                <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"></path>
+              </svg>
+            </Link>
+            <Link href="/linkedin">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                data-supported-dps="24x24"
+                fill="currentColor"
+                className="text-[#0A66C2]"
+                width="28"
+                height="28"
+                focusable="false"
+              >
+                <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+              </svg>
+            </Link>
+            <Link href="/twitter">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="icon icon-tabler icons-tabler-outline icon-tabler-brand-x"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+{
+  /*
+    <div className="flex gap-2 pt-2">
             <Link href="/github">
               <motion.svg
                 viewBox="0 0 1024 1024"
@@ -109,8 +157,5 @@ export const Hero = () => {
               </motion.svg>
             </Link>
           </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+  */
+}
