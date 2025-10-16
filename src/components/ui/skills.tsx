@@ -8,7 +8,7 @@ import { useState } from "react";
 const svgIcons = [
   { icon: "/better-auth.svg", title: "Better-Auth" },
   { icon: "/javascript.svg", title: "JavaScript" },
-  { icon: "/aws_dark.svg", title: "AWS" },
+  { icon: "/aws_light.svg", title: "AWS" },
   { icon: "/cloudflare-workers.svg", title: "Cloudflare Workers" },
   { icon: "/docker.svg", title: "Docker" },
   { icon: "/motion_dark.svg", title: "Framer Motion" },
@@ -42,7 +42,7 @@ export const Skills = () => {
   return (
     <div>
       <div className="flex flex-col px-5 pt-4">
-        <h1 className="font-title text-2xl font-bold tracking-tight text-black text-shadow-md">
+        <h1 className="font-title text-2xl font-bold tracking-tight text-black text-shadow-md dark:text-white">
           Skills
         </h1>
         <div className="relative pt-3">
@@ -63,10 +63,10 @@ export const Skills = () => {
                 initial={{ opacity: 0, filter: "blur(10px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="rounded bg-gray-900 px-3 py-1.5 text-xs font-semibold text-white shadow-lg"
+                className="rounded bg-neutral-900 px-3 py-1.5 text-xs font-semibold text-white shadow-lg dark:bg-neutral-200 dark:text-black"
               >
                 {svgIcons[hoveredIndex].title}
-                <div className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-gray-900"></div>
+                <div className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-neutral-900 dark:bg-neutral-200"></div>
               </motion.div>
             </motion.div>
           )}

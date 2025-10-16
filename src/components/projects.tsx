@@ -68,7 +68,7 @@ export const Projects = () => {
 
   return (
     <Container className="pt-2">
-      <h1 className="font-title px-5 pb-3 text-2xl font-bold tracking-tight text-black">
+      <h1 className="font-title px-5 pb-3 text-2xl font-bold tracking-tight text-black dark:text-white">
         Projects
       </h1>
 
@@ -83,12 +83,10 @@ export const Projects = () => {
             {hovered === idx && (
               <motion.span
                 layoutId="hovered-span"
-                className="absolute inset-0 h-full w-full rounded-md bg-[#ededed] dark:bg-[#0d0d0d]"
+                className="absolute inset-0 h-full w-full bg-[#ededed] dark:bg-[#0d0d0d]"
               />
             )}
             <div className="relative w-full">
-              {/* Dashed Grid */}
-
               <div
                 key={project.title}
                 className="relative z-10 flex gap-10 border-b border-neutral-200 px-5 pb-5 dark:border-neutral-900"

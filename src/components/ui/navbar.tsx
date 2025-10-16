@@ -24,7 +24,7 @@ const Navbar = () => {
             {navItems.map((item, idx) => (
               <Link
                 key={idx}
-                className="rounded-md px-2 py-1 transition-all duration-300 hover:bg-neutral-100"
+                className="rounded-md px-2 py-1 transition-all duration-300 hover:bg-neutral-100 dark:hover:bg-neutral-900"
                 href={item.link}
               >
                 {item.title}

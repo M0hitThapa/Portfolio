@@ -12,7 +12,7 @@ export default function Home() {
         <Hero />
 
         <div className="flex flex-col items-start justify-start px-5 pt-4">
-          <h1 className="font-title text-2xl font-bold tracking-tight text-black text-shadow-md">
+          <h1 className="font-title text-2xl font-bold tracking-tight text-black text-shadow-md dark:text-white">
             About
           </h1>
           <p className="text-secondary pt-2 pr-5 text-base/7">
