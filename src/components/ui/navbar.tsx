@@ -5,15 +5,33 @@ import { ModeToggle } from "../mode-toggle";
 
 const Navbar = () => {
   const navItems = [
-    { title: "About", link: "/about" },
     { title: "Projects", link: "/project" },
     { title: "Blogs", link: "/blog" },
     { title: "Contact", link: "/contact" },
   ];
 
   return (
-    <Container className="border-r border-l border-gray-200 bg-white dark:border-neutral-900 dark:bg-black">
-      <div className="flex items-center justify-between border-b border-gray-200 px-5 py-3 dark:border-neutral-900">
+    <Container className="relative border-r border-l border-gray-200 bg-white dark:border-neutral-900 dark:bg-black">
+      <svg className="absolute inset-0 h-full w-full">
+        <defs>
+          <filter id="noiseFilter">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.9"
+              numOctaves="4"
+              stitchTiles="stitch"
+            />
+            <feColorMatrix type="saturate" values="0" />
+          </filter>
+        </defs>
+        <rect
+          width="100%"
+          height="100%"
+          filter="url(#noiseFilter)"
+          opacity="0.15"
+        />
+      </svg>
+      <div className="relative flex items-center justify-between border-b border-gray-200 px-5 py-3 dark:border-neutral-900">
         <div className="flex items-end gap-2">
           <h1 className="font-title text-3xl font-black text-black text-shadow-md dark:text-neutral-100">
             M.T

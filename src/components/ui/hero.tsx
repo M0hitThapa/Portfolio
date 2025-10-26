@@ -39,7 +39,7 @@ export const Hero = () => {
             alt="profile"
             height={140}
             width={140}
-            className="shadow-input rounded-full border-2 border-neutral-100 dark:border-neutral-950"
+            className="shadow-input rounded-full border-2 border-neutral-100 dark:border-neutral-700"
           />
         </motion.div>
         <div className="relative flex flex-col items-end justify-end">
