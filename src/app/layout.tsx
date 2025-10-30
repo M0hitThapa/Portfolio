@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`bg-white antialiased dark:bg-black`}>
+      <body className={`bg-white antialiased dark:bg-neutral-950`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           {children}

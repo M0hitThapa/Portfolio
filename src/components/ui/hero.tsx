@@ -46,7 +46,7 @@ export const Hero = () => {
           <h1 className="ibm-plex-serif-semibold-italic pt-2 pb-1 text-3xl tracking-tight text-black text-shadow-lg md:text-5xl dark:text-white">
             Mohit Thapa
           </h1>
-          <p className="shadow-input max-w-lg rounded-md bg-neutral-900 px-2 py-1 font-bold text-white md:text-sm">
+          <p className="shadow-input max-w-lg rounded-sm bg-neutral-900 px-2 py-1 font-bold text-white md:text-sm dark:bg-neutral-50 dark:text-black">
             &lt;👋Design Engineer&gt;
           </p>
           <div className="flex gap-2 pt-2">
@@ -61,7 +61,7 @@ export const Hero = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"
+                className="icon icon-tabler icons-tabler-outline icon-tabler-brand-github text-black dark:text-white"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
@@ -92,7 +92,7 @@ export const Hero = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="icon icon-tabler icons-tabler-outline icon-tabler-brand-x"
+                className="icon icon-tabler icons-tabler-outline icon-tabler-brand-x text-black dark:text-white"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M4 4l11.733 16h4.267l-11.733 -16z" />

@@ -98,7 +98,27 @@ export const Projects = () => {
               <motion.span
                 layoutId="hovered-span"
                 className="absolute inset-0 h-full w-full bg-[#f0f0f0] dark:bg-[#0d0d0d]"
-              />
+              >
+                <svg className="absolute inset-0 h-full w-full">
+                  <defs>
+                    <filter id="noiseFilter">
+                      <feTurbulence
+                        type="fractalNoise"
+                        baseFrequency="0.9"
+                        numOctaves="4"
+                        stitchTiles="stitch"
+                      />
+                      <feColorMatrix type="saturate" values="0" />
+                    </filter>
+                  </defs>
+                  <rect
+                    width="100%"
+                    height="100%"
+                    filter="url(#noiseFilter)"
+                    opacity="0.15"
+                  />
+                </svg>
+              </motion.span>
             )}
             <div className="relative w-full">
               <div
@@ -112,23 +132,34 @@ export const Projects = () => {
                     <h1 className="font-title flex gap-2 text-xl font-black text-black dark:text-white">
                       <SquareArrowRightIcon />
                       {project.title}
-                      <button className="shadow-input flex items-center justify-center rounded-md border border-gray-100 p-0.5 text-sm dark:border-neutral-800">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
-                        </svg>
-                      </button>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <button className="shadow-input flex cursor-pointer items-center justify-center rounded-md border border-gray-100 p-0.5 text-sm dark:border-neutral-800">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"
+                            >
+                              <path
+                                stroke="none"
+                                d="M0 0h24v24H0z"
+                                fill="none"
+                              />
+                              <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+                            </svg>
+                          </button>
+                        </TooltipTrigger>
+                        <TooltipContent className="rounded bg-neutral-950 dark:bg-neutral-50 dark:text-black">
+                          <p>Github</p>
+                        </TooltipContent>
+                      </Tooltip>
                     </h1>
                     <ul className="list-disc text-sm leading-7 font-medium text-neutral-600">
                       {project.features.map((feature, featureIdx) => (
@@ -161,7 +192,7 @@ export const Projects = () => {
                 <div>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <button className="shadow-input flex items-center justify-center rounded-md border border-gray-100 p-0.5 text-sm text-black dark:border-neutral-800 dark:text-white">
+                      <button className="shadow-input flex cursor-pointer items-center justify-center rounded-md border border-gray-100 p-0.5 text-sm text-black dark:border-neutral-800 dark:text-white">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="20"
@@ -181,7 +212,7 @@ export const Projects = () => {
                         </svg>
                       </button>
                     </TooltipTrigger>
-                    <TooltipContent>
+                    <TooltipContent className="rounded bg-neutral-950 text-white dark:bg-neutral-50 dark:text-black">
                       <p>open live</p>
                     </TooltipContent>
                   </Tooltip>
