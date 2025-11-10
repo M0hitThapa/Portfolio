@@ -12,8 +12,9 @@ export const Hero = () => {
   return (
     <div className="relative w-full">
       {/* Noise Texture (Darker Dots) Background */}
-      <div className="border-edge screen-line-before screen-line-after absolute aspect-2/1 h-48 w-full bg-zinc-950/0.25 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] select-none [--pattern-foreground:var(--color-zinc-950)]/5 after:-bottom-px dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5" />
-      <div className="relative flex items-center justify-between px-5 pb-4 md:pt-5">
+      {/* <div className="border-edge screen-line-before screen-line-after absolute aspect-2/1 h-52 w-full bg-zinc-950/0.25 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] select-none [--pattern-foreground:var(--color-zinc-950)]/5 after:-bottom-px dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5" /> */}
+
+      <div className="relative flex items-center justify-between px-5 pb-7 md:pt-6">
         <motion.div
           onClick={() => setIsHovered(!isHovered)}
           animate={{
@@ -34,23 +35,96 @@ export const Hero = () => {
             src={
               isHovered
                 ? "https://i.pinimg.com/736x/83/70/28/837028b92264d54e1e177999791b60c0.jpg"
-                : "/profile.jpeg"
+                : "/profile.png"
             }
             alt="profile"
             height={140}
             width={140}
-            className="shadow-input rounded-full border-2 border-neutral-100 dark:border-neutral-700"
+            className="shadow-input rounded-full border-2 border-neutral-500 bg-neutral-800 dark:bg-neutral-300"
           />
         </motion.div>
         <div className="relative flex flex-col items-end justify-end">
-          <h1 className="ibm-plex-serif-semibold-italic pt-2 pb-1 text-3xl tracking-tight text-black text-shadow-lg md:text-5xl dark:text-white">
+          <h1 className="ibm-plex-serif-semibold-italic pt-2 pb-1 text-3xl tracking-tight text-neutral-950 text-shadow-lg md:text-6xl dark:text-neutral-100">
             Mohit Thapa
           </h1>
-          <p className="shadow-input max-w-lg rounded-sm bg-neutral-900 px-2 py-1 font-bold text-white md:text-sm dark:bg-neutral-50 dark:text-black">
-            &lt;👋Design Engineer&gt;
-          </p>
-          <div className="flex gap-2 pt-2">
+          <div className="rounded shadow-xl/20 shadow-neutral-800 dark:shadow-neutral-200">
+            <p className="md:text-md flex max-w-lg items-center justify-center gap-1 rounded bg-neutral-900 px-1 py-1 font-bold text-white shadow-inner dark:bg-neutral-50 dark:text-black">
+              &lt;
+              <svg
+                viewBox="0 0 511.997 511.997"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="currentColor"
+              >
+                <circle
+                  className="fill-[#FFDB6C]"
+                  cx="248.106"
+                  cy="255.994"
+                  r="238.407"
+                />
+                <path
+                  className="fill-[#FFB04C]"
+                  d="M299.194,459.21c-131.668,0-238.406-106.738-238.406-238.406c0-70.345,30.473-133.565,78.932-177.203
+      C62.537,83.064,9.699,163.361,9.699,255.999c0,131.668,106.738,238.406,238.406,238.406c61.323,0,117.231-23.161,159.474-61.201
+      C375.061,449.829,338.224,459.21,299.194,459.21z"
+                />
+                <path
+                  className="fill-[#F9A880]"
+                  d="M145.651,259.417c-17.705,0-32.059,14.353-32.059,32.057h64.116
+      C177.71,273.769,163.357,259.417,145.651,259.417z"
+                />
+                <path
+                  className="fill-[#F9A880]"
+                  d="M425.281,259.417c-17.705,0-32.059,14.353-32.059,32.057h64.116
+      C457.338,273.769,442.985,259.417,425.281,259.417z"
+                />
+                <path
+                  className="fill-[#56586F]"
+                  d="M110.88,126.974c62.25-14.287,112.643-9.37,168.464,3.639c8.278,1.928,17.022,4.079,26.258,4.361
+      c15.38,0.471,32.669-3.357,47.575-7.102c58.85-14.783,104.822-7.094,149.123,2.372l-3.273,26.18
+      c-6.916,0.153-9.091,3.378-11.067,9.673c-10.34,32.945-1.534,89.63-77.978,82.965c-50.29-4.385-64.692-18.164-88.66-78.746
+      c-2.039-5.153-3.365-13.669-15.011-13.354c-6.576,0.177-12.457,1.34-14.508,12.765c-3.823,21.288-32.893,79.129-91.915,79.065
+      c-52.132-0.056-72.019-27.116-74.393-86.743c-0.295-7.403-6.746-8.809-10.617-8.896L110.88,126.974L110.88,126.974z"
+                />
+                <path
+                  className="fill-[#7F184C]"
+                  d="M297.768,430.656L297.768,430.656c-53.296,0-96.502-43.206-96.502-96.502l0,0h193.004l0,0
+      C394.271,387.45,351.065,430.656,297.768,430.656z"
+                />
+                <path
+                  className="fill-[#F2F2F2]"
+                  d="M224.812,334.152v15.064c0,6.352,5.149,11.5,11.5,11.5h122.911c6.352,0,11.5-5.149,11.5-11.5v-15.064
+      H224.812z"
+                />
+                <path
+                  className="fill-[#FC4C59]"
+                  d="M299.794,390.619c-26.086-12.12-55.033-10.358-78.507,2.211
+      c17.639,22.99,45.377,37.825,76.593,37.825l0,0c13.757,0,26.829-2.898,38.672-8.085
+      C327.864,409.127,315.406,397.873,299.794,390.619z"
+                />
+              </svg>{" "}
+              Design Engineer&gt;
+            </p>
+          </div>
+          <div className="flex gap-1 pt-2">
             <Link href="/github">
+              <svg
+                className="text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </Link>
+            <Link href="/linkedin">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="28"
@@ -61,24 +135,14 @@ export const Hero = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="icon icon-tabler icons-tabler-outline icon-tabler-brand-github text-black dark:text-white"
+                className="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin text-black dark:text-neutral-200"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
-              </svg>
-            </Link>
-            <Link href="/linkedin">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                data-supported-dps="24x24"
-                fill="currentColor"
-                className="text-[#0A66C2]"
-                width="28"
-                height="28"
-                focusable="false"
-              >
-                <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+                <path d="M8 11v5" />
+                <path d="M8 8v.01" />
+                <path d="M12 16v-5" />
+                <path d="M16 16v-3a2 2 0 1 0 -4 0" />
+                <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
               </svg>
             </Link>
             <Link href="/twitter">
@@ -92,7 +156,7 @@ export const Hero = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="icon icon-tabler icons-tabler-outline icon-tabler-brand-x text-black dark:text-white"
+                className="icon icon-tabler icons-tabler-outline icon-tabler-brand-x text-black dark:text-neutral-200"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M4 4l11.733 16h4.267l-11.733 -16z" />

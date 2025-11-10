@@ -30,16 +30,18 @@ export default function Home() {
         </svg>
         <div className="relative">
           <Hero />
-
           <div className="flex flex-col items-start justify-start px-5 pt-4">
             <h1 className="font-title text-2xl font-bold tracking-tight text-black text-shadow-md dark:text-white">
               About
             </h1>
-            <p className="text-secondary pt-2 pr-5 text-base/7">
-              I'm a passionate software engineer dedicated to crafting elegant
-              solutions for complex problems. With expertise in full-stack
-              development, I enjoy building user-centric applications that make
-              a difference.
+            <p className="pt-2 pr-5 text-base/7 text-neutral-600 dark:text-neutral-400">
+              I am a{" "}
+              <span className="font-title font-black text-neutral-950 text-shadow-2xs dark:text-neutral-100">
+                FULL-STACK DEVELOPER{" "}
+              </span>
+              with a passion for designing great web experience with code.
+              Helping myself to improve daily by learning new things daily.
+              Always ahead to learn and get into new things.
             </p>
           </div>
 

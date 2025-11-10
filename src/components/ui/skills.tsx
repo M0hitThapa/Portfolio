@@ -6,21 +6,21 @@ import { motion } from "motion/react";
 import { useState } from "react";
 
 const svgIcons = [
-  { icon: "/better-auth.svg", title: "Better-Auth" },
+  { icon: "/nextjs_icon_dark.svg", title: "Next.js" },
+  { icon: "/react_dark.svg", title: "React" },
   { icon: "/javascript.svg", title: "JavaScript" },
+  { icon: "/typescript.svg", title: "TypeScript" },
+  { icon: "/motion_dark.svg", title: "Framer Motion" },
+  { icon: "/tailwindcss.svg", title: "Tailwind CSS" },
+  { icon: "/postgresql.svg", title: "PostgreSQL" },
+  { icon: "/neon.svg", title: "Neon" },
+  { icon: "/nodejs.svg", title: "Node.js" },
+  { icon: "/clerk.svg", title: "Clerk" },
+  { icon: "/better-auth.svg", title: "Better-Auth" },
   { icon: "/aws_light.svg", title: "AWS" },
   { icon: "/cloudflare-workers.svg", title: "Cloudflare Workers" },
   { icon: "/docker.svg", title: "Docker" },
-  { icon: "/motion_dark.svg", title: "Framer Motion" },
-  { icon: "/neon.svg", title: "Neon" },
   { icon: "/neovim.svg", title: "Neovim" },
-  { icon: "/nextjs_icon_dark.svg", title: "Next.js" },
-  { icon: "/nodejs.svg", title: "Node.js" },
-  { icon: "/postgresql.svg", title: "PostgreSQL" },
-  { icon: "/tailwindcss.svg", title: "Tailwind CSS" },
-  { icon: "/typescript.svg", title: "TypeScript" },
-  { icon: "/react_dark.svg", title: "React" },
-  { icon: "/clerk.svg", title: "Clerk" },
 ];
 
 export const Skills = () => {
@@ -71,8 +71,8 @@ export const Skills = () => {
             </motion.div>
           )}
 
-          <div className="border-t border-b border-dashed border-neutral-200 mask-r-from-80% mask-l-from-80% dark:border-neutral-900">
-            <div className="mx-auto flex w-fit border-l border-dashed border-gray-300">
+          <div className="border-t border-b border-dashed border-neutral-200 mask-r-from-90% mask-l-from-90% dark:border-neutral-900">
+            <div className="mx-auto flex w-fit border-dashed border-gray-300">
               {svgIcons.map((item, idx) => (
                 <div
                   key={idx}

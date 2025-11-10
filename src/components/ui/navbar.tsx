@@ -42,7 +42,7 @@ const Navbar = () => {
             {navItems.map((item, idx) => (
               <Link
                 key={idx}
-                className="rounded-md px-2 py-1 transition-all duration-300 hover:bg-neutral-100 dark:hover:bg-neutral-900"
+                className="font-title rounded-md px-2 py-1 font-semibold transition-all duration-300 hover:bg-neutral-200 dark:hover:bg-neutral-800"
                 href={item.link}
               >
                 {item.title}

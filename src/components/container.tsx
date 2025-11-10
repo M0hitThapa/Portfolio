@@ -9,7 +9,7 @@ const Container = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className={cn("mx-auto max-w-[840px]", className)}>{children}</div>
+    <div className={cn("mx-auto max-w-[820px]", className)}>{children}</div>
   );
 };
 

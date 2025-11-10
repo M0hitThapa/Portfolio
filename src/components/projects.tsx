@@ -6,6 +6,7 @@ import { GithubIcon, SquareArrowRightIcon } from "./icons";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import Link from "next/link";
 
 const spring = { damping: 3, stiffness: 50, restDelta: 0.001 };
 
@@ -17,13 +18,13 @@ export const Projects = () => {
       src: "https://i.pinimg.com/1200x/1a/f1/10/1af110a98630bc2b446392b10fef7618.jpg",
       href: "#",
       description:
-        "A sleek, modern pricing page with a dark theme, designed for SaaS products and subscription services.",
+        "A sleek and modern dark-themed pricing page — perfect for SaaS startups and subscription-based services.",
       features: [
-        " Responsive design for all screen sizes",
-        " Multiple payment gateway integrations",
-        " Animated pricing cards with hover effects",
-        " Secure checkout process",
-        " Usage analytics dashboard",
+        "💳 Seamless Stripe integration with global currency support",
+        "⚡ Dynamic plan switching with instant UI updates",
+        "📊 Real-time usage and billing analytics",
+        "🧠 Smart discount and coupon logic",
+        "🔒 Secure checkout experience with validation",
       ],
     },
     {
@@ -31,13 +32,13 @@ export const Projects = () => {
       src: "https://i.pinimg.com/1200x/1a/18/e9/1a18e9b3d3fd97d7b4291e0af63c46b9.jpg",
       href: "#",
       description:
-        "A clean and engaging blog section layout, perfect for sharing articles and updates with readers.",
+        "A beautifully structured blog layout designed to boost engagement and readability across all devices.",
       features: [
-        " Rich text editor with markdown support",
-        " Advanced search and filtering options",
-        " Comment system with moderation",
-        " Mobile-optimized reading experience",
-        " Tag-based content organization",
+        "📝 Built-in markdown editor with live preview",
+        "🔍 Smart content filtering and search system",
+        "💬 Comment section with moderation tools",
+        "📱 Fully responsive and optimized for mobile reading",
+        "🏷️ Tag and category-based organization",
       ],
     },
     {
@@ -45,13 +46,13 @@ export const Projects = () => {
       src: "https://i.pinimg.com/1200x/c3/7c/8d/c37c8d887c04bce699b62739ed1d18f1.jpg",
       href: "#",
       description:
-        "An intuitive dashboard interface for managing analytics, user data, and business metrics.",
+        "A powerful and intuitive analytics dashboard for managing users, metrics, and insights effortlessly.",
       features: [
-        " Real-time data visualization",
-        " Customizable widget layouts",
-        " Lightning-fast performance",
-        " Smart notification system",
-        " Export data in multiple formats",
+        "📈 Real-time charts and data visualization",
+        "🧩 Modular widgets with drag-and-drop layout",
+        "⚙️ Blazing-fast performance with caching",
+        "🔔 Smart alert and notification system",
+        "📤 Export data to CSV, PDF, or JSON formats",
       ],
     },
     {
@@ -59,13 +60,13 @@ export const Projects = () => {
       src: "https://i.pinimg.com/1200x/c0/49/06/c049064ccc7757ca93b0825d36b586f4.jpg",
       href: "#",
       description:
-        "A visually appealing bento grid layout, ideal for showcasing multiple features or portfolio items.",
+        "A dynamic and aesthetic bento-style layout — perfect for showcasing projects, features, or portfolios.",
       features: [
-        " Drag-and-drop grid customization",
-        " Dynamic color theming",
-        " Auto-responsive grid system",
-        " Smooth transition animations",
-        " Support for images and videos",
+        "🧱 Fully customizable drag-and-drop grid layout",
+        "🎨 Adaptive color theming with light/dark modes",
+        "🌀 Smooth hover and transition animations",
+        "📸 Supports mixed media — images, videos, and icons",
+        "🔁 Auto-responsive layout for all screen sizes",
       ],
     },
   ];
@@ -129,30 +130,42 @@ export const Projects = () => {
                   <MagneticImage src={project.src} alt={project.title} />
 
                   <div className="relative flex flex-col items-start justify-center gap-4">
-                    <h1 className="font-title flex gap-2 text-xl font-black text-black dark:text-white">
-                      <SquareArrowRightIcon />
+                    <h1 className="font-title flex items-center gap-2 text-xl font-black text-black dark:text-white">
+                      <svg
+                        className="h-8 w-8 text-gray-800 dark:text-white"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4 5.78571C4 4.80909 4.78639 4 5.77778 4H18.2222C19.2136 4 20 4.80909 20 5.78571V15H4V5.78571ZM12 12c0-.5523.4477-1 1-1h2c.5523 0 1 .4477 1 1s-.4477 1-1 1h-2c-.5523 0-1-.4477-1-1ZM8.27586 6.31035c.38089-.39993 1.01387-.41537 1.4138-.03449l2.62504 2.5c.1981.18875.3103.45047.3103.72414 0 .27368-.1122.5354-.3103.7241l-2.62504 2.5c-.39993.3809-1.03291.3655-1.4138-.0344-.38088-.4-.36544-1.033.03449-1.4138L10.175 9.5 8.31035 7.72414c-.39993-.38089-.41537-1.01386-.03449-1.41379Z"
+                          clip-rule="evenodd"
+                        />
+                        <path d="M2 17v1c0 1.1046.89543 2 2 2h16c1.1046 0 2-.8954 2-2v-1H2Z" />
+                      </svg>
+
                       {project.title}
                       <Tooltip>
                         <TooltipTrigger asChild>
-                          <button className="shadow-input flex cursor-pointer items-center justify-center rounded-md border border-gray-100 p-0.5 text-sm dark:border-neutral-800">
+                          <button>
                             <svg
+                              className="h-6 w-6 text-gray-800 dark:text-white"
+                              aria-hidden="true"
                               xmlns="http://www.w3.org/2000/svg"
-                              width="20"
-                              height="20"
+                              width="24"
+                              height="24"
+                              fill="currentColor"
                               viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"
                             >
                               <path
-                                stroke="none"
-                                d="M0 0h24v24H0z"
-                                fill="none"
+                                fill-rule="evenodd"
+                                d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
+                                clip-rule="evenodd"
                               />
-                              <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
                             </svg>
                           </button>
                         </TooltipTrigger>
@@ -161,7 +174,7 @@ export const Projects = () => {
                         </TooltipContent>
                       </Tooltip>
                     </h1>
-                    <ul className="list-disc text-sm leading-7 font-medium text-neutral-600">
+                    <ul className="list-disc text-sm leading-7 font-medium text-neutral-600 dark:text-neutral-400">
                       {project.features.map((feature, featureIdx) => (
                         <li key={featureIdx}>{feature}</li>
                       ))}
@@ -170,9 +183,12 @@ export const Projects = () => {
                       {Skills.map((skill, idx) => (
                         <div
                           key={skill.title}
-                          className="shadow-input flex items-center justify-center gap-0.5 rounded border border-neutral-300 dark:border-neutral-800"
+                          className="shadow-input flex cursor-pointer items-center justify-center gap-0.5 rounded border border-neutral-300 inset-shadow-sm dark:border-neutral-800 dark:inset-shadow-neutral-900"
                         >
-                          <div className="flex items-center justify-center gap-1 px-0.5 py-1">
+                          <Link
+                            href={"https://nextjs.org/"}
+                            className="flex items-center justify-center gap-0.5 px-0.5 py-1"
+                          >
                             <Image
                               src={skill.icon}
                               alt="skills"
@@ -183,7 +199,7 @@ export const Projects = () => {
                             <h1 className="text-xs text-neutral-800 dark:text-neutral-400">
                               {skill.title}
                             </h1>
-                          </div>
+                          </Link>
                         </div>
                       ))}
                     </div>
@@ -192,23 +208,26 @@ export const Projects = () => {
                 <div>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <button className="shadow-input flex cursor-pointer items-center justify-center rounded-md border border-gray-100 p-0.5 text-sm text-black dark:border-neutral-800 dark:text-white">
+                      <button className="shadow-input flex cursor-pointer items-center justify-center rounded border border-gray-300 p-1 text-sm text-black dark:border-gray-700 dark:text-white">
                         <svg
+                          className="h-6 w-6 text-gray-800 dark:text-white"
+                          aria-hidden="true"
                           xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
+                          width="24"
+                          height="24"
+                          fill="currentColor"
                           viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="icon icon-tabler icons-tabler-outline icon-tabler-external-link"
                         >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
-                          <path d="M11 13l9 -9" />
-                          <path d="M15 4h5v5" />
+                          <path
+                            fill-rule="evenodd"
+                            d="M11.403 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6.403a3.01 3.01 0 0 1-1.743-1.612l-3.025 3.025A3 3 0 1 1 9.99 9.768l3.025-3.025A3.01 3.01 0 0 1 11.403 5Z"
+                            clip-rule="evenodd"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            d="M13.232 4a1 1 0 0 1 1-1H20a1 1 0 0 1 1 1v5.768a1 1 0 1 1-2 0V6.414l-6.182 6.182a1 1 0 0 1-1.414-1.414L17.586 5h-3.354a1 1 0 0 1-1-1Z"
+                            clip-rule="evenodd"
+                          />
                         </svg>
                       </button>
                     </TooltipTrigger>
@@ -278,27 +297,4 @@ function MagneticImage({ src, alt }: { src: string; alt: string }) {
       </motion.div>
     </div>
   );
-}
-
-{
-  /*
-  
-  
-      <div className="">
-                    {Skills.map((skill, idx) => (
-                      <div
-                        key={skill.title}
-                        className="flex items-center justify-center gap-0.5"
-                      >
-                        <Image
-                          src={skill.icon}
-                          alt="skills"
-                          height={20}
-                          width={20}
-                        />
-                        <h1 className="text-sm">{skill.title}</h1>
-                      </div>
-                    ))}
-                  </div>
-  */
 }
