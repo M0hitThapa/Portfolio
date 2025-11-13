@@ -14,17 +14,17 @@ export const Projects = () => {
   const [hovered, setHovered] = useState<number | null>(null);
   const Projects = [
     {
-      title: "Dark Pricing Page",
+      title: "Bento Grid Design",
       src: "tripbuddy.png",
       href: "#",
       description:
-        "A sleek and modern dark-themed pricing page — perfect for SaaS startups and subscription-based services.",
+        "A dynamic and aesthetic bento-style layout — perfect for showcasing projects, features, or portfolios.",
       features: [
-        "💳 Seamless Stripe integration with global currency support",
-        "⚡ Dynamic plan switching with instant UI updates",
-        "📊 Real-time usage and billing analytics",
-        "🧠 Smart discount and coupon logic",
-        "🔒 Secure checkout experience with validation",
+        "🧱 Fully customizable drag-and-drop grid layout",
+        "🎨 Adaptive color theming with light/dark modes",
+        "🌀 Smooth hover and transition animations",
+        "📸 Supports mixed media — images, videos, and icons",
+        "🔁 Auto-responsive layout for all screen sizes",
       ],
     },
     {
@@ -126,7 +126,7 @@ export const Projects = () => {
                 key={project.title}
                 className="relative z-10 flex items-start justify-between border-b border-neutral-200 px-5 pb-5 dark:border-neutral-900"
               >
-                <div className="flex flex-col items-center justify-center gap-10 sm:flex-row sm:items-start">
+                <div className="mx-auto flex flex-col items-center justify-center gap-10 sm:flex-row sm:items-start">
                   <MagneticImage src={project.src} alt={project.title} />
 
                   <div className="relative flex flex-col items-start justify-center gap-4">
@@ -208,7 +208,7 @@ export const Projects = () => {
                         <li key={featureIdx}>{feature}</li>
                       ))}
                     </ul>
-                    <div className="grid grid-cols-3 gap-1 md:grid-cols-4">
+                    <div className="grid grid-cols-4 gap-1">
                       {Skills.map((skill, idx) => (
                         <div
                           key={skill.title}
