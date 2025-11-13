@@ -15,7 +15,7 @@ export const Projects = () => {
   const Projects = [
     {
       title: "Dark Pricing Page",
-      src: "https://i.pinimg.com/1200x/1a/f1/10/1af110a98630bc2b446392b10fef7618.jpg",
+      src: "tripbuddy.png",
       href: "#",
       description:
         "A sleek and modern dark-themed pricing page — perfect for SaaS startups and subscription-based services.",
@@ -29,7 +29,7 @@ export const Projects = () => {
     },
     {
       title: "Blog Section",
-      src: "https://i.pinimg.com/1200x/1a/18/e9/1a18e9b3d3fd97d7b4291e0af63c46b9.jpg",
+      src: "tripbuddy.png",
       href: "#",
       description:
         "A beautifully structured blog layout designed to boost engagement and readability across all devices.",
@@ -42,22 +42,22 @@ export const Projects = () => {
       ],
     },
     {
-      title: "Dashboard Design",
-      src: "https://i.pinimg.com/1200x/c3/7c/8d/c37c8d887c04bce699b62739ed1d18f1.jpg",
+      title: "Bento Grid Design",
+      src: "tripbuddy.png",
       href: "#",
       description:
-        "A powerful and intuitive analytics dashboard for managing users, metrics, and insights effortlessly.",
+        "A dynamic and aesthetic bento-style layout — perfect for showcasing projects, features, or portfolios.",
       features: [
-        "📈 Real-time charts and data visualization",
-        "🧩 Modular widgets with drag-and-drop layout",
-        "⚙️ Blazing-fast performance with caching",
-        "🔔 Smart alert and notification system",
-        "📤 Export data to CSV, PDF, or JSON formats",
+        "🧱 Fully customizable drag-and-drop grid layout",
+        "🎨 Adaptive color theming with light/dark modes",
+        "🌀 Smooth hover and transition animations",
+        "📸 Supports mixed media — images, videos, and icons",
+        "🔁 Auto-responsive layout for all screen sizes",
       ],
     },
     {
       title: "Bento Grid Design",
-      src: "https://i.pinimg.com/1200x/c0/49/06/c049064ccc7757ca93b0825d36b586f4.jpg",
+      src: "tripbuddy.png",
       href: "#",
       description:
         "A dynamic and aesthetic bento-style layout — perfect for showcasing projects, features, or portfolios.",
@@ -83,7 +83,7 @@ export const Projects = () => {
 
   return (
     <Container className="pt-2">
-      <h1 className="font-title px-5 pb-3 text-2xl font-bold tracking-tight text-black dark:text-white">
+      <h1 className="font-title px-5 pb-3 font-bold tracking-tight text-black sm:text-lg md:text-2xl dark:text-white">
         Projects
       </h1>
 
@@ -126,13 +126,13 @@ export const Projects = () => {
                 key={project.title}
                 className="relative z-10 flex items-start justify-between border-b border-neutral-200 px-5 pb-5 dark:border-neutral-900"
               >
-                <div className="flex items-start justify-center gap-10">
+                <div className="flex flex-col items-center justify-center gap-10 sm:flex-row sm:items-start">
                   <MagneticImage src={project.src} alt={project.title} />
 
                   <div className="relative flex flex-col items-start justify-center gap-4">
-                    <h1 className="font-title flex items-center gap-2 text-xl font-black text-black dark:text-white">
+                    <h1 className="font-title flex items-center gap-2 text-lg font-black text-black md:text-xl dark:text-white">
                       <svg
-                        className="h-8 w-8 text-gray-800 dark:text-white"
+                        className="h-6 w-6 text-gray-800 dark:text-white"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -173,13 +173,42 @@ export const Projects = () => {
                           <p>Github</p>
                         </TooltipContent>
                       </Tooltip>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <button className="shadow-input flex cursor-pointer items-center justify-center rounded border border-gray-300 p-0.5 text-sm text-black md:hidden dark:border-gray-700 dark:text-white">
+                            <svg
+                              className="h-6 w-6 text-gray-800 dark:text-white"
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M11.403 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6.403a3.01 3.01 0 0 1-1.743-1.612l-3.025 3.025A3 3 0 1 1 9.99 9.768l3.025-3.025A3.01 3.01 0 0 1 11.403 5Z"
+                                clip-rule="evenodd"
+                              />
+                              <path
+                                fill-rule="evenodd"
+                                d="M13.232 4a1 1 0 0 1 1-1H20a1 1 0 0 1 1 1v5.768a1 1 0 1 1-2 0V6.414l-6.182 6.182a1 1 0 0 1-1.414-1.414L17.586 5h-3.354a1 1 0 0 1-1-1Z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                          </button>
+                        </TooltipTrigger>
+                        <TooltipContent className="rounded bg-neutral-950 text-white dark:bg-neutral-50 dark:text-black">
+                          <p>open live</p>
+                        </TooltipContent>
+                      </Tooltip>
                     </h1>
                     <ul className="list-disc text-sm leading-7 font-medium text-neutral-600 dark:text-neutral-400">
                       {project.features.map((feature, featureIdx) => (
                         <li key={featureIdx}>{feature}</li>
                       ))}
                     </ul>
-                    <div className="grid grid-cols-4 gap-1">
+                    <div className="grid grid-cols-3 gap-1 md:grid-cols-4">
                       {Skills.map((skill, idx) => (
                         <div
                           key={skill.title}
@@ -208,7 +237,7 @@ export const Projects = () => {
                 <div>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <button className="shadow-input flex cursor-pointer items-center justify-center rounded border border-gray-300 p-1 text-sm text-black dark:border-gray-700 dark:text-white">
+                      <button className="shadow-input hidden cursor-pointer items-center justify-center rounded border border-gray-300 p-1 text-sm text-black md:flex dark:border-gray-700 dark:text-white">
                         <svg
                           className="h-6 w-6 text-gray-800 dark:text-white"
                           aria-hidden="true"
@@ -266,8 +295,8 @@ function MagneticImage({ src, alt }: { src: string; alt: string }) {
       const offsetX = clientX - (rect.left + rect.width / 2);
       const offsetY = clientY - (rect.top + rect.height / 2);
 
-      x.set(offsetX / 5);
-      y.set(offsetY / 5);
+      x.set(offsetX / 6);
+      y.set(offsetY / 6);
     };
 
     window.addEventListener("pointermove", handlePointerMove);
@@ -275,7 +304,7 @@ function MagneticImage({ src, alt }: { src: string; alt: string }) {
   }, [hovered, x, y]);
 
   return (
-    <div className="relative rounded border border-neutral-200 bg-white bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] p-3 shadow-lg [--pattern-fg:theme(colors.neutral.100)] dark:border-neutral-900 dark:bg-black dark:[--pattern-fg:theme(colors.neutral.900)]">
+    <div className="relative rounded border border-neutral-200 bg-neutral-50 bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] p-3 shadow-lg [--pattern-fg:theme(colors.neutral.100)] dark:border-neutral-900 dark:bg-neutral-950 dark:[--pattern-fg:theme(colors.neutral.900)]">
       <motion.div
         ref={ref}
         style={{ x, y }}
@@ -292,7 +321,7 @@ function MagneticImage({ src, alt }: { src: string; alt: string }) {
         <img
           src={src}
           alt={alt}
-          className="relative z-10 h-48 w-auto rounded border border-white object-cover shadow-lg dark:border-black"
+          className="relative z-10 h-48 w-auto rounded border border-white object-cover shadow-lg sm:w-64 dark:border-black"
         />
       </motion.div>
     </div>

@@ -40,9 +40,9 @@ export const Skills = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <div className="flex flex-col px-5 pt-4">
-        <h1 className="font-title text-2xl font-bold tracking-tight text-black text-shadow-md dark:text-white">
+        <h1 className="font-title text-lg font-bold tracking-tight text-black text-shadow-md md:text-2xl dark:text-white">
           Skills
         </h1>
         <div className="relative pt-3">
@@ -76,7 +76,7 @@ export const Skills = () => {
               {svgIcons.map((item, idx) => (
                 <div
                   key={idx}
-                  className="relative flex h-13 w-13 cursor-pointer items-center justify-center border-r border-dashed border-neutral-200 dark:border-neutral-900"
+                  className="relative flex h-7 w-7 cursor-pointer items-center justify-center border-r border-dashed border-neutral-200 md:h-13 md:w-13 dark:border-neutral-900"
                   onMouseEnter={(e) => handleMouseEnter(idx, e)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
@@ -95,7 +95,7 @@ export const Skills = () => {
                       alt={item.title}
                       height={45}
                       width={45}
-                      className="h-13 w-13 p-2"
+                      className="h-7 w-7 p-1 md:h-13 md:w-13 md:p-2"
                     />
                   </motion.div>
                 </div>

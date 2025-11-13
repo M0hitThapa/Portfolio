@@ -14,7 +14,7 @@ export const Hero = () => {
       {/* Noise Texture (Darker Dots) Background */}
       {/* <div className="border-edge screen-line-before screen-line-after absolute aspect-2/1 h-52 w-full bg-zinc-950/0.25 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] select-none [--pattern-foreground:var(--color-zinc-950)]/5 after:-bottom-px dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5" /> */}
 
-      <div className="relative flex items-center justify-between px-5 pb-7 md:pt-6">
+      <div className="relative flex items-center justify-between px-5 pt-2 pb-7 md:pt-6">
         <motion.div
           onClick={() => setIsHovered(!isHovered)}
           animate={{
@@ -32,78 +32,20 @@ export const Hero = () => {
             initial={{ opacity: 0, filter: "blur(10px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            src={
-              isHovered
-                ? "https://i.pinimg.com/736x/83/70/28/837028b92264d54e1e177999791b60c0.jpg"
-                : "/profile.png"
-            }
+            src={isHovered ? "/sticker-profile.png" : "/profile.png"}
             alt="profile"
             height={140}
             width={140}
-            className="shadow-input rounded-full border-2 border-neutral-500 bg-neutral-800 dark:bg-neutral-300"
+            className="shadow-input size-24 rounded-full border-2 border-neutral-500 bg-neutral-800 md:size-40 dark:bg-neutral-100"
           />
         </motion.div>
         <div className="relative flex flex-col items-end justify-end">
           <h1 className="ibm-plex-serif-semibold-italic pt-2 pb-1 text-3xl tracking-tight text-neutral-950 text-shadow-lg md:text-6xl dark:text-neutral-100">
             Mohit Thapa
           </h1>
-          <div className="rounded shadow-xl/20 shadow-neutral-800 dark:shadow-neutral-200">
-            <p className="md:text-md flex max-w-lg items-center justify-center gap-1 rounded bg-neutral-900 px-1 py-1 font-bold text-white shadow-inner dark:bg-neutral-50 dark:text-black">
-              &lt;
-              <svg
-                viewBox="0 0 511.997 511.997"
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="currentColor"
-              >
-                <circle
-                  className="fill-[#FFDB6C]"
-                  cx="248.106"
-                  cy="255.994"
-                  r="238.407"
-                />
-                <path
-                  className="fill-[#FFB04C]"
-                  d="M299.194,459.21c-131.668,0-238.406-106.738-238.406-238.406c0-70.345,30.473-133.565,78.932-177.203
-      C62.537,83.064,9.699,163.361,9.699,255.999c0,131.668,106.738,238.406,238.406,238.406c61.323,0,117.231-23.161,159.474-61.201
-      C375.061,449.829,338.224,459.21,299.194,459.21z"
-                />
-                <path
-                  className="fill-[#F9A880]"
-                  d="M145.651,259.417c-17.705,0-32.059,14.353-32.059,32.057h64.116
-      C177.71,273.769,163.357,259.417,145.651,259.417z"
-                />
-                <path
-                  className="fill-[#F9A880]"
-                  d="M425.281,259.417c-17.705,0-32.059,14.353-32.059,32.057h64.116
-      C457.338,273.769,442.985,259.417,425.281,259.417z"
-                />
-                <path
-                  className="fill-[#56586F]"
-                  d="M110.88,126.974c62.25-14.287,112.643-9.37,168.464,3.639c8.278,1.928,17.022,4.079,26.258,4.361
-      c15.38,0.471,32.669-3.357,47.575-7.102c58.85-14.783,104.822-7.094,149.123,2.372l-3.273,26.18
-      c-6.916,0.153-9.091,3.378-11.067,9.673c-10.34,32.945-1.534,89.63-77.978,82.965c-50.29-4.385-64.692-18.164-88.66-78.746
-      c-2.039-5.153-3.365-13.669-15.011-13.354c-6.576,0.177-12.457,1.34-14.508,12.765c-3.823,21.288-32.893,79.129-91.915,79.065
-      c-52.132-0.056-72.019-27.116-74.393-86.743c-0.295-7.403-6.746-8.809-10.617-8.896L110.88,126.974L110.88,126.974z"
-                />
-                <path
-                  className="fill-[#7F184C]"
-                  d="M297.768,430.656L297.768,430.656c-53.296,0-96.502-43.206-96.502-96.502l0,0h193.004l0,0
-      C394.271,387.45,351.065,430.656,297.768,430.656z"
-                />
-                <path
-                  className="fill-[#F2F2F2]"
-                  d="M224.812,334.152v15.064c0,6.352,5.149,11.5,11.5,11.5h122.911c6.352,0,11.5-5.149,11.5-11.5v-15.064
-      H224.812z"
-                />
-                <path
-                  className="fill-[#FC4C59]"
-                  d="M299.794,390.619c-26.086-12.12-55.033-10.358-78.507,2.211
-      c17.639,22.99,45.377,37.825,76.593,37.825l0,0c13.757,0,26.829-2.898,38.672-8.085
-      C327.864,409.127,315.406,397.873,299.794,390.619z"
-                />
-              </svg>{" "}
-              Design Engineer&gt;
+          <div className="rounded-sm shadow-md/40 shadow-neutral-800 dark:shadow-neutral-200">
+            <p className="md:text-md flex max-w-lg items-center justify-center gap-1 rounded-sm bg-neutral-900 px-3 py-1 text-sm font-bold tracking-tight text-white shadow-inner shadow-neutral-400 dark:bg-neutral-50 dark:text-black dark:shadow-neutral-700">
+              Design Engineer
             </p>
           </div>
           <div className="flex gap-1 pt-2">
