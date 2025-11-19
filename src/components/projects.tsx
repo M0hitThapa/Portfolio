@@ -14,59 +14,59 @@ export const Projects = () => {
   const [hovered, setHovered] = useState<number | null>(null);
   const Projects = [
     {
-      title: "Bento Grid Design",
+      title: "Bento Grid UI Kit",
       src: "tripbuddy.png",
       href: "#",
       description:
-        "A dynamic and aesthetic bento-style layout — perfect for showcasing projects, features, or portfolios.",
+        "A polished bento-style layout system ideal for showcasing features, projects, and product highlights with a premium visual feel.",
       features: [
-        "🧱 Fully customizable drag-and-drop grid layout",
-        "🎨 Adaptive color theming with light/dark modes",
-        "🌀 Smooth hover and transition animations",
-        "📸 Supports mixed media — images, videos, and icons",
-        "🔁 Auto-responsive layout for all screen sizes",
+        "🧱 Drag-and-drop, fully customizable grid blocks",
+        "🎨 Adaptive theme engine with light, dark & auto modes",
+        "🌀 Smooth motion transitions powered by Framer Motion",
+        "📸 Mixed media support — images, videos, GIFs, icons",
+        "🔁 Smart responsive resizing for all screen types",
       ],
     },
     {
-      title: "Blog Section",
+      title: "Responsive Blog Module",
       src: "tripbuddy.png",
       href: "#",
       description:
-        "A beautifully structured blog layout designed to boost engagement and readability across all devices.",
+        "A clean and modern blog experience optimized for readability, engagement, and effortless content management.",
       features: [
-        "📝 Built-in markdown editor with live preview",
-        "🔍 Smart content filtering and search system",
-        "💬 Comment section with moderation tools",
-        "📱 Fully responsive and optimized for mobile reading",
-        "🏷️ Tag and category-based organization",
+        "📝 Markdown editor with auto-save & live preview",
+        "🔍 Search + filter system with fuzzy matching",
+        "💬 Comment features with spam protection",
+        "📱 Pixel-perfect mobile reading experience",
+        "🏷️ Powerful tagging and category structuring",
       ],
     },
     {
-      title: "Bento Grid Design",
+      title: "Portfolio Bento Grid",
       src: "tripbuddy.png",
       href: "#",
       description:
-        "A dynamic and aesthetic bento-style layout — perfect for showcasing projects, features, or portfolios.",
+        "A customizable and aesthetic bento layout tailored for designers, developers, and creators to beautifully present work.",
       features: [
-        "🧱 Fully customizable drag-and-drop grid layout",
-        "🎨 Adaptive color theming with light/dark modes",
-        "🌀 Smooth hover and transition animations",
-        "📸 Supports mixed media — images, videos, and icons",
-        "🔁 Auto-responsive layout for all screen sizes",
+        "🧱 Modular layout with reorderable content blocks",
+        "🎨 Dynamic theme customization panel",
+        "🌀 Fluid hover animations for interactive feel",
+        "📸 Media-rich blocks for videos, screenshots & icons",
+        "🔁 Auto-responsive scaling for any device size",
       ],
     },
     {
-      title: "Bento Grid Design",
-      src: "tripbuddy.png",
+      title: "Feedback Widget System",
+      src: "feedback.png",
       href: "#",
       description:
-        "A dynamic and aesthetic bento-style layout — perfect for showcasing projects, features, or portfolios.",
+        "A plug-and-play feedback widget that automatically collects user ratings, messages, and insights from any website.",
       features: [
-        "🧱 Fully customizable drag-and-drop grid layout",
-        "🎨 Adaptive color theming with light/dark modes",
-        "🌀 Smooth hover and transition animations",
-        "📸 Supports mixed media — images, videos, and icons",
-        "🔁 Auto-responsive layout for all screen sizes",
+        "⭐ 1–5 star rating with optional reviews",
+        "💬 Message box with email/name fields",
+        "🌙 Auto dark/light mode support",
+        "⚡ One-line script embed — works with any site",
+        "📊 Dashboard-ready structured feedback data",
       ],
     },
   ];
@@ -321,7 +321,7 @@ function MagneticImage({ src, alt }: { src: string; alt: string }) {
         <img
           src={src}
           alt={alt}
-          className="relative z-10 h-48 w-auto rounded border border-white object-cover shadow-lg sm:w-64 dark:border-black"
+          className="relative z-10 h-48 w-auto rounded border border-white object-cover shadow-lg sm:w-72 dark:border-black"
         />
       </motion.div>
     </div>

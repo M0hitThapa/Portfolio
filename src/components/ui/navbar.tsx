@@ -14,7 +14,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="relative border-b border-gray-200 dark:border-neutral-900">
+    <Container className="relative border-b border-gray-200 dark:border-neutral-900">
       <div className="flex items-center justify-between px-5 py-3">
         <div className="flex items-end gap-2">
           <h1 className="font-title text-3xl font-black text-black text-shadow-md dark:text-neutral-100">
@@ -80,7 +80,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </div>
+    </Container>
   );
 };
 

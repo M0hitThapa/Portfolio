@@ -10,7 +10,7 @@ export const Hero = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="relative w-full">
+    <Container className="relative w-full">
       {/* Noise Texture (Darker Dots) Background */}
       {/* <div className="border-edge screen-line-before screen-line-after absolute aspect-2/1 h-52 w-full bg-zinc-950/0.25 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] select-none [--pattern-foreground:var(--color-zinc-950)]/5 after:-bottom-px dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5" /> */}
 
@@ -32,11 +32,11 @@ export const Hero = () => {
             initial={{ opacity: 0, filter: "blur(10px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            src={isHovered ? "/sticker-profile.png" : "/profile.png"}
+            src={isHovered ? "/profile2.jpeg" : "/profile.png"}
             alt="profile"
-            height={140}
-            width={140}
-            className="shadow-input size-24 rounded-full border-2 border-neutral-500 bg-neutral-800 md:size-40 dark:bg-neutral-100"
+            height={120}
+            width={120}
+            className="shadow-input rounded-full border-2 border-neutral-200 bg-neutral-900 md:size-40 dark:border-neutral-800"
           />
         </motion.div>
         <div className="relative flex flex-col items-end justify-end">
@@ -108,7 +108,7 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

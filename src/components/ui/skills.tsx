@@ -40,7 +40,7 @@ export const Skills = () => {
   };
 
   return (
-    <div className="">
+    <Container className="">
       <div className="flex flex-col px-5 pt-4">
         <h1 className="font-title text-lg font-bold tracking-tight text-black text-shadow-md md:text-2xl dark:text-white">
           Skills
@@ -104,6 +104,6 @@ export const Skills = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
