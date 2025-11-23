@@ -15,16 +15,16 @@ export const Projects = () => {
   const Projects = [
     {
       title: "Bento Grid UI Kit",
-      src: "tripbuddy.png",
+      src: "tripbuddy1.png",
       href: "#",
       description:
-        "A polished bento-style layout system ideal for showcasing features, projects, and product highlights with a premium visual feel.",
+        "A refined and flexible bento-style layout system designed for showcasing projects, features, and product highlights with a polished, modern look.",
       features: [
-        "🧱 Drag-and-drop, fully customizable grid blocks",
-        "🎨 Adaptive theme engine with light, dark & auto modes",
-        "🌀 Smooth motion transitions powered by Framer Motion",
-        "📸 Mixed media support — images, videos, GIFs, icons",
-        "🔁 Smart responsive resizing for all screen types",
+        "🧱 Deeply customizable grid blocks with drag-and-drop control for effortless layout building.",
+        "🎨 Intelligent theme engine with light, dark, and auto modes for adaptive aesthetics.",
+        "🌀 Smooth, expressive motion effects powered by Framer Motion for a premium feel.",
+        "📸 Support for rich media including images, GIFs, videos, and icons without breaking layout.",
+        "🔁 Advanced responsive scaling that automatically adjusts spacing and structure across devices.",
       ],
     },
     {
@@ -32,13 +32,13 @@ export const Projects = () => {
       src: "tripbuddy.png",
       href: "#",
       description:
-        "A clean and modern blog experience optimized for readability, engagement, and effortless content management.",
+        "A clean, modern blogging experience optimized for readability, performance, and effortless content creation.",
       features: [
-        "📝 Markdown editor with auto-save & live preview",
-        "🔍 Search + filter system with fuzzy matching",
-        "💬 Comment features with spam protection",
-        "📱 Pixel-perfect mobile reading experience",
-        "🏷️ Powerful tagging and category structuring",
+        "📝 Markdown editor with live preview and auto-save to streamline the writing process.",
+        "🔍 Smart fuzzy-search filtering for quickly locating relevant posts and topics.",
+        "💬 Comment system with moderation tools and built-in spam protection.",
+        "📱 Fine-tuned mobile reading experience with optimized typography and spacing.",
+        "🏷️ Organized content structure using tags, categories, metadata, and reading-time indicators.",
       ],
     },
     {
@@ -46,27 +46,27 @@ export const Projects = () => {
       src: "tripbuddy.png",
       href: "#",
       description:
-        "A customizable and aesthetic bento layout tailored for designers, developers, and creators to beautifully present work.",
+        "A customizable bento-style portfolio layout built for creators who want a clean, dynamic way to present their work.",
       features: [
-        "🧱 Modular layout with reorderable content blocks",
-        "🎨 Dynamic theme customization panel",
-        "🌀 Fluid hover animations for interactive feel",
-        "📸 Media-rich blocks for videos, screenshots & icons",
-        "🔁 Auto-responsive scaling for any device size",
+        "🧱 Modular content blocks that can be reordered to match any storytelling style.",
+        "🎨 Theme customization with adjustable colors, accents, and typography presets.",
+        "🌀 Smooth hover, zoom, and reveal animations for an interactive browsing experience.",
+        "📸 Support for images, videos, animations, and icons inside individual grid tiles.",
+        "🔁 Auto-responsive scaling that maintains layout structure across all screen sizes.",
       ],
     },
     {
       title: "Feedback Widget System",
-      src: "feedback.png",
+      src: "feedback3.png",
       href: "#",
       description:
-        "A plug-and-play feedback widget that automatically collects user ratings, messages, and insights from any website.",
+        "A plug-and-play feedback widget that collects ratings, messages, and user insights directly from any website.",
       features: [
-        "⭐ 1–5 star rating with optional reviews",
-        "💬 Message box with email/name fields",
-        "🌙 Auto dark/light mode support",
-        "⚡ One-line script embed — works with any site",
-        "📊 Dashboard-ready structured feedback data",
+        "⭐ 1–5 star rating with optional written feedback for detailed user insights.",
+        "💬 Message input with name/email fields for credible and actionable responses.",
+        "🌙 Auto light/dark mode detection with seamless transitions.",
+        "⚡ One-line embed script that integrates instantly with any website or framework.",
+        "📊 Clean JSON output ready for dashboards, analytics, or custom pipelines.",
       ],
     },
   ];
@@ -83,7 +83,7 @@ export const Projects = () => {
 
   return (
     <Container className="pt-2">
-      <h1 className="font-title px-5 pb-3 font-bold tracking-tight text-black sm:text-lg md:text-2xl dark:text-white">
+      <h1 className="px-5 pb-3 font-bold tracking-tight text-black sm:text-lg md:text-2xl dark:text-white">
         Projects
       </h1>
 
@@ -98,7 +98,7 @@ export const Projects = () => {
             {hovered === idx && (
               <motion.span
                 layoutId="hovered-span"
-                className="absolute inset-0 h-full w-full bg-[#f0f0f0] dark:bg-[#0d0d0d]"
+                className="absolute inset-0 h-full w-full bg-[#f8f8f8] dark:bg-[#0d0d0d]"
               >
                 <svg className="absolute inset-0 h-full w-full">
                   <defs>
@@ -126,120 +126,58 @@ export const Projects = () => {
                 key={project.title}
                 className="relative z-10 flex items-start justify-between border-b border-neutral-200 px-5 pb-5 dark:border-neutral-900"
               >
-                <div className="mx-auto flex flex-col items-center justify-center gap-10 sm:flex-row sm:items-start">
-                  <MagneticImage src={project.src} alt={project.title} />
-
+                <div className="mx-auto items-center justify-center gap-10">
                   <div className="relative flex flex-col items-start justify-center gap-4">
-                    <h1 className="font-title flex items-center gap-2 text-lg font-black text-black md:text-xl dark:text-white">
-                      <svg
-                        className="h-6 w-6 text-gray-800 dark:text-white"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M4 5.78571C4 4.80909 4.78639 4 5.77778 4H18.2222C19.2136 4 20 4.80909 20 5.78571V15H4V5.78571ZM12 12c0-.5523.4477-1 1-1h2c.5523 0 1 .4477 1 1s-.4477 1-1 1h-2c-.5523 0-1-.4477-1-1ZM8.27586 6.31035c.38089-.39993 1.01387-.41537 1.4138-.03449l2.62504 2.5c.1981.18875.3103.45047.3103.72414 0 .27368-.1122.5354-.3103.7241l-2.62504 2.5c-.39993.3809-1.03291.3655-1.4138-.0344-.38088-.4-.36544-1.033.03449-1.4138L10.175 9.5 8.31035 7.72414c-.39993-.38089-.41537-1.01386-.03449-1.41379Z"
-                          clip-rule="evenodd"
-                        />
-                        <path d="M2 17v1c0 1.1046.89543 2 2 2h16c1.1046 0 2-.8954 2-2v-1H2Z" />
-                      </svg>
-
-                      {project.title}
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <button>
-                            <svg
-                              className="h-6 w-6 text-gray-800 dark:text-white"
-                              aria-hidden="true"
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
-                                clip-rule="evenodd"
-                              />
-                            </svg>
-                          </button>
-                        </TooltipTrigger>
-                        <TooltipContent className="rounded bg-neutral-950 dark:bg-neutral-50 dark:text-black">
-                          <p>Github</p>
-                        </TooltipContent>
-                      </Tooltip>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <button className="shadow-input flex cursor-pointer items-center justify-center rounded border border-gray-300 p-0.5 text-sm text-black md:hidden dark:border-gray-700 dark:text-white">
-                            <svg
-                              className="h-6 w-6 text-gray-800 dark:text-white"
-                              aria-hidden="true"
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                d="M11.403 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6.403a3.01 3.01 0 0 1-1.743-1.612l-3.025 3.025A3 3 0 1 1 9.99 9.768l3.025-3.025A3.01 3.01 0 0 1 11.403 5Z"
-                                clip-rule="evenodd"
-                              />
-                              <path
-                                fill-rule="evenodd"
-                                d="M13.232 4a1 1 0 0 1 1-1H20a1 1 0 0 1 1 1v5.768a1 1 0 1 1-2 0V6.414l-6.182 6.182a1 1 0 0 1-1.414-1.414L17.586 5h-3.354a1 1 0 0 1-1-1Z"
-                                clip-rule="evenodd"
-                              />
-                            </svg>
-                          </button>
-                        </TooltipTrigger>
-                        <TooltipContent className="rounded bg-neutral-950 text-white dark:bg-neutral-50 dark:text-black">
-                          <p>open live</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </h1>
-                    <ul className="list-disc text-sm leading-7 font-medium text-neutral-600 dark:text-neutral-400">
-                      {project.features.map((feature, featureIdx) => (
-                        <li key={featureIdx}>{feature}</li>
-                      ))}
-                    </ul>
-                    <div className="grid grid-cols-4 gap-1">
-                      {Skills.map((skill, idx) => (
-                        <div
-                          key={skill.title}
-                          className="shadow-input flex cursor-pointer items-center justify-center gap-0.5 rounded border border-neutral-300 inset-shadow-sm dark:border-neutral-800 dark:inset-shadow-neutral-900"
-                        >
-                          <Link
-                            href={"https://nextjs.org/"}
-                            className="flex items-center justify-center gap-0.5 px-0.5 py-1"
-                          >
-                            <Image
-                              src={skill.icon}
-                              alt="skills"
-                              height={14}
-                              width={14}
-                              className="h-4 w-4"
-                            />
-                            <h1 className="text-xs text-neutral-800 dark:text-neutral-400">
-                              {skill.title}
-                            </h1>
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <button className="shadow-input hidden cursor-pointer items-center justify-center rounded border border-gray-300 p-1 text-sm text-black md:flex dark:border-gray-700 dark:text-white">
+                    <div className="flex w-full items-end justify-between">
+                      <h1 className="flex items-center gap-2 text-lg font-black text-black md:text-xl dark:text-white">
                         <svg
                           className="h-6 w-6 text-gray-800 dark:text-white"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M4 5.78571C4 4.80909 4.78639 4 5.77778 4H18.2222C19.2136 4 20 4.80909 20 5.78571V15H4V5.78571ZM12 12c0-.5523.4477-1 1-1h2c.5523 0 1 .4477 1 1s-.4477 1-1 1h-2c-.5523 0-1-.4477-1-1ZM8.27586 6.31035c.38089-.39993 1.01387-.41537 1.4138-.03449l2.62504 2.5c.1981.18875.3103.45047.3103.72414 0 .27368-.1122.5354-.3103.7241l-2.62504 2.5c-.39993.3809-1.03291.3655-1.4138-.0344-.38088-.4-.36544-1.033.03449-1.4138L10.175 9.5 8.31035 7.72414c-.39993-.38089-.41537-1.01386-.03449-1.41379Z"
+                            clip-rule="evenodd"
+                          />
+                          <path d="M2 17v1c0 1.1046.89543 2 2 2h16c1.1046 0 2-.8954 2-2v-1H2Z" />
+                        </svg>
+
+                        {project.title}
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <button>
+                              <svg
+                                className="h-6 w-6 text-gray-800 dark:text-white"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
+                                  clip-rule="evenodd"
+                                />
+                              </svg>
+                            </button>
+                          </TooltipTrigger>
+                          <TooltipContent className="rounded bg-neutral-950 dark:bg-neutral-50 dark:text-black">
+                            <p>Github</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </h1>
+
+                      <button className="flex cursor-pointer items-center justify-center gap-0.5 rounded-sm border-2 border-neutral-300 px-1.5 py-1 text-sm font-semibold text-black inset-shadow-sm dark:border-neutral-800 dark:text-white dark:inset-shadow-neutral-900">
+                        <span>open live</span>
+                        <svg
+                          className="size-5 text-gray-800 dark:text-white"
                           aria-hidden="true"
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -259,12 +197,49 @@ export const Projects = () => {
                           />
                         </svg>
                       </button>
-                    </TooltipTrigger>
-                    <TooltipContent className="rounded bg-neutral-950 text-white dark:bg-neutral-50 dark:text-black">
-                      <p>open live</p>
-                    </TooltipContent>
-                  </Tooltip>
+                    </div>
+                    <MagneticImage src={project.src} alt={project.title} />
+                    <p className="text-md px-5 py-2 leading-7 font-bold text-neutral-700 dark:text-neutral-300">
+                      {project.description}
+                    </p>
+
+                    <ul className="list-disc px-5 text-sm/7">
+                      {project.features.map((feature, featureIdx) => (
+                        <li
+                          className="tracking-wide text-neutral-600 dark:text-neutral-400"
+                          key={featureIdx}
+                        >
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="grid grid-cols-3 gap-2 px-5 py-2 md:grid-cols-6">
+                      {Skills.map((skill, idx) => (
+                        <div
+                          key={skill.title}
+                          className="shadow-input flex cursor-pointer items-center justify-center gap-0.5 rounded border border-neutral-300 inset-shadow-sm dark:border-neutral-800 dark:inset-shadow-neutral-900"
+                        >
+                          <Link
+                            href={"https://nextjs.org/"}
+                            className="flex items-center justify-center gap-1 px-1 py-1.5"
+                          >
+                            <Image
+                              src={skill.icon}
+                              alt="skills"
+                              height={14}
+                              width={14}
+                              className="h-4 w-4"
+                            />
+                            <h1 className="text-xs font-semibold text-neutral-800 dark:text-neutral-400">
+                              {skill.title}
+                            </h1>
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
+                <div></div>
               </div>
             </div>
           </div>
@@ -275,55 +250,15 @@ export const Projects = () => {
 };
 
 function MagneticImage({ src, alt }: { src: string; alt: string }) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const x = useSpring(0, spring);
-  const y = useSpring(0, spring);
-  const [hovered, setHovered] = useState(false);
-
-  useEffect(() => {
-    if (!hovered) {
-      x.set(0);
-      y.set(0);
-      return;
-    }
-
-    const handlePointerMove = ({ clientX, clientY }: MouseEvent) => {
-      const el = ref.current;
-      if (!el) return;
-
-      const rect = el.getBoundingClientRect();
-      const offsetX = clientX - (rect.left + rect.width / 2);
-      const offsetY = clientY - (rect.top + rect.height / 2);
-
-      x.set(offsetX / 6);
-      y.set(offsetY / 6);
-    };
-
-    window.addEventListener("pointermove", handlePointerMove);
-    return () => window.removeEventListener("pointermove", handlePointerMove);
-  }, [hovered, x, y]);
-
   return (
     <div className="relative rounded border border-neutral-200 bg-neutral-50 bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] p-3 shadow-lg [--pattern-fg:theme(colors.neutral.100)] dark:border-neutral-900 dark:bg-neutral-950 dark:[--pattern-fg:theme(colors.neutral.900)]">
-      <motion.div
-        ref={ref}
-        style={{ x, y }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        whileHover={{
-          scale: 1.02,
-          transition: { duration: 0.3 },
-        }}
-        transition={{
-          duration: 0.3,
-        }}
-      >
+      <div>
         <img
           src={src}
           alt={alt}
-          className="relative z-10 h-48 w-auto rounded border border-white object-cover shadow-lg sm:w-72 dark:border-black"
+          className="relative z-10 w-auto rounded border border-white object-cover shadow-lg dark:border-black"
         />
-      </motion.div>
+      </div>
     </div>
   );
 }

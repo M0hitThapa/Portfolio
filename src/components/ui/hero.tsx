@@ -34,9 +34,9 @@ export const Hero = () => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             src={isHovered ? "/profile2.jpeg" : "/profile.png"}
             alt="profile"
-            height={120}
-            width={120}
-            className="shadow-input rounded-full border-2 border-neutral-200 bg-neutral-900 md:size-40 dark:border-neutral-800"
+            height={1000}
+            width={1000}
+            className="shadow-input size-28 rounded-full border-2 border-neutral-200 bg-neutral-900 md:size-36 dark:border-neutral-800"
           />
         </motion.div>
         <div className="relative flex flex-col items-end justify-end">
@@ -44,7 +44,7 @@ export const Hero = () => {
             Mohit Thapa
           </h1>
           <div className="rounded-sm shadow-md/40 shadow-neutral-800 dark:shadow-neutral-200">
-            <p className="md:text-md flex max-w-lg items-center justify-center gap-1 rounded-sm bg-neutral-900 px-3 py-1 text-sm font-bold tracking-tight text-white shadow-inner shadow-neutral-400 dark:bg-neutral-50 dark:text-black dark:shadow-neutral-700">
+            <p className="md:text-md flex max-w-lg items-center justify-center gap-1 rounded-sm bg-neutral-900 px-3 py-1 text-sm font-bold text-white shadow-inner shadow-neutral-400 dark:bg-neutral-50 dark:text-black dark:shadow-neutral-700">
               Design Engineer
             </p>
           </div>

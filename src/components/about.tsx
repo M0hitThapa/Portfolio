@@ -6,9 +6,9 @@ export const About = () => {
       <h1 className="font-title text-lg font-bold tracking-tight text-black text-shadow-md md:text-2xl dark:text-white">
         About
       </h1>
-      <p className="w-auto pt-2 pr-5 text-sm/7 text-neutral-500 md:text-base/7 dark:text-neutral-600">
+      <p className="w-auto pt-2 pr-5 text-sm/7 text-neutral-600 md:text-base/7 dark:text-neutral-400">
         I am a{" "}
-        <span className="font-title font-black text-neutral-950 text-shadow-2xs dark:text-neutral-100">
+        <span className="font-title font-black tracking-wider text-neutral-950 text-shadow-2xs dark:text-neutral-100">
           FULL-STACK DEVELOPER{" "}
         </span>
         with a passion for designing great web experience with code. Helping
