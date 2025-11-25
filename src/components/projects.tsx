@@ -83,7 +83,7 @@ export const Projects = () => {
 
   return (
     <Container className="pt-2">
-      <h1 className="px-5 pb-3 font-bold tracking-tight text-black sm:text-lg md:text-2xl dark:text-white">
+      <h1 className="px-5 pb-3 text-lg font-semibold tracking-tight text-neutral-950 text-shadow-md md:text-2xl dark:text-neutral-100">
         Projects
       </h1>
 
@@ -129,7 +129,7 @@ export const Projects = () => {
                 <div className="mx-auto items-center justify-center gap-10">
                   <div className="relative flex flex-col items-start justify-center gap-4">
                     <div className="flex w-full items-end justify-between">
-                      <h1 className="flex items-center gap-2 text-lg font-black text-black md:text-xl dark:text-white">
+                      <h1 className="flex items-center gap-2 text-lg font-semibold tracking-tight text-neutral-800 text-shadow-md md:text-xl dark:text-neutral-300">
                         <svg
                           className="h-6 w-6 text-gray-800 dark:text-white"
                           aria-hidden="true"
@@ -150,7 +150,10 @@ export const Projects = () => {
                         {project.title}
                         <Tooltip>
                           <TooltipTrigger asChild>
-                            <button>
+                            <Link
+                              href="/github"
+                              className="rounded-md border-2 border-neutral-300 p-1 shadow-inner shadow-neutral-200 dark:border-neutral-700 dark:shadow-neutral-800"
+                            >
                               <svg
                                 className="h-6 w-6 text-gray-800 dark:text-white"
                                 aria-hidden="true"
@@ -166,7 +169,7 @@ export const Projects = () => {
                                   clip-rule="evenodd"
                                 />
                               </svg>
-                            </button>
+                            </Link>
                           </TooltipTrigger>
                           <TooltipContent className="rounded bg-neutral-950 dark:bg-neutral-50 dark:text-black">
                             <p>Github</p>
@@ -199,14 +202,14 @@ export const Projects = () => {
                       </button>
                     </div>
                     <MagneticImage src={project.src} alt={project.title} />
-                    <p className="text-md px-5 py-2 leading-7 font-bold text-neutral-700 dark:text-neutral-300">
+                    <p className="px-5 py-2 text-base font-semibold text-neutral-800 dark:text-neutral-300">
                       {project.description}
                     </p>
 
-                    <ul className="list-disc px-5 text-sm/7">
+                    <ul className="list-disc px-9 text-sm/7 font-medium">
                       {project.features.map((feature, featureIdx) => (
                         <li
-                          className="tracking-wide text-neutral-600 dark:text-neutral-400"
+                          className="text-neutral-700 dark:text-neutral-400"
                           key={featureIdx}
                         >
                           {feature}
@@ -230,7 +233,7 @@ export const Projects = () => {
                               width={14}
                               className="h-4 w-4"
                             />
-                            <h1 className="text-xs font-semibold text-neutral-800 dark:text-neutral-400">
+                            <h1 className="text-xs font-medium text-neutral-800 dark:text-neutral-400">
                               {skill.title}
                             </h1>
                           </Link>

@@ -1,6 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Armata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -85,12 +83,10 @@
 }
 
 * {
-  font-family: "Roboto Slab", serif;
+  font-family: "inter-variable", sans-serif;
+  font-variation-settings: "slnt" 0;
 }
 
-.font-title {
-  font-family: "Armata", sans-serif;
-}
 .ibm-plex-serif-semibold-italic {
   font-family: "IBM Plex Serif", serif;
   font-weight: 600;
@@ -135,14 +131,10 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    font-family: "Lexend", sans-serif;
   }
   body {
     @apply bg-background text-foreground;
 
-    .font-title {
-      font-family: "Armata", sans-serif;
-    }
     .ibm-plex-serif-semibold-italic {
       font-family: "IBM Plex Serif", serif;
       font-weight: 600;

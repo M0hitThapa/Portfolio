@@ -17,16 +17,16 @@ const Navbar = () => {
     <Container className="relative border-b border-gray-200 dark:border-neutral-900">
       <div className="flex items-center justify-between px-5 py-3">
         <div className="flex items-end gap-2">
-          <h1 className="text-3xl font-black text-black text-shadow-md dark:text-neutral-100">
+          <h1 className="text-3xl font-semibold text-black text-shadow-md dark:text-neutral-100">
             M.T
           </h1>
         </div>
         <div className="flex items-center justify-center gap-2">
-          <div className="hidden gap-2 text-base/7 font-medium text-neutral-700 md:flex dark:text-neutral-300">
+          <div className="hidden gap-2 text-base font-medium text-neutral-700 md:flex dark:text-neutral-300">
             {navItems.map((item, idx) => (
               <Link
                 key={idx}
-                className="rounded-md px-2 py-1 font-semibold transition-all duration-300 hover:bg-neutral-200 dark:hover:bg-neutral-800"
+                className="rounded-md px-2 py-1 transition-all duration-300 hover:bg-neutral-200 dark:hover:bg-neutral-800"
                 href={item.link}
               >
                 {item.title}

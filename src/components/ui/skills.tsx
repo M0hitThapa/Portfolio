@@ -42,7 +42,7 @@ export const Skills = () => {
   return (
     <Container className="">
       <div className="flex flex-col px-5 pt-4">
-        <h1 className="font-title text-lg font-bold tracking-tight text-black text-shadow-md md:text-2xl dark:text-white">
+        <h1 className="text-lg font-semibold tracking-tight text-neutral-950 text-shadow-md md:text-2xl dark:text-neutral-100">
           Skills
         </h1>
         <div className="relative pt-3">
@@ -95,7 +95,7 @@ export const Skills = () => {
                       alt={item.title}
                       height={45}
                       width={45}
-                      className="h-7 w-7 p-1 md:h-13 md:w-13 md:p-2"
+                      className="h-7 w-7 p-1 md:h-12 md:w-12 md:p-2"
                     />
                   </motion.div>
                 </div>
