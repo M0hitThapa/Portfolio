@@ -40,8 +40,11 @@ export const Hero = () => {
           />
         </motion.div>
         <div className="relative flex flex-col items-end justify-end">
-          <h1 className="ibm-plex-serif-semibold-italic pt-2 pb-1 text-3xl tracking-tight text-neutral-950 text-shadow-lg md:text-6xl dark:text-neutral-100">
-            Mohit Thapa
+          <h1 className="ibm-plex-serif-semibold-italic pt-2 pb-1 text-3xl tracking-tight text-neutral-900 text-shadow-lg md:text-6xl dark:text-neutral-100">
+            <span className="ibm-plex-serif-semibold-italic text-neutral-700 dark:text-neutral-300">
+              Mohit
+            </span>
+            <span className="ibm-plex-serif-semibold-italic">Thapa</span>
           </h1>
           <div className="rounded-sm shadow-md/40 shadow-neutral-800 dark:shadow-neutral-200">
             <p className="md:text-md flex max-w-lg items-center justify-center gap-1 rounded-sm bg-neutral-900 px-3 py-1 text-sm font-bold text-white shadow-inner shadow-neutral-400 dark:bg-neutral-50 dark:text-black dark:shadow-neutral-700">

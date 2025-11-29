@@ -15,7 +15,8 @@ export const Projects = () => {
   const Projects = [
     {
       title: "Bento Grid UI Kit",
-      src: "tripbuddy1.png",
+      lightSrc: "/feedback-light.png",
+      darkSrc: "/feedback-dark.png",
       href: "#",
       description:
         "A refined and flexible bento-style layout system designed for showcasing projects, features, and product highlights with a polished, modern look.",
@@ -29,7 +30,8 @@ export const Projects = () => {
     },
     {
       title: "Responsive Blog Module",
-      src: "tripbuddy.png",
+      lightSrc: "/feedback-light.png",
+      darkSrc: "/feedback-dark.png",
       href: "#",
       description:
         "A clean, modern blogging experience optimized for readability, performance, and effortless content creation.",
@@ -43,7 +45,8 @@ export const Projects = () => {
     },
     {
       title: "Portfolio Bento Grid",
-      src: "tripbuddy.png",
+      lightSrc: "/feedback-light.png",
+      darkSrc: "/feedback-dark.png",
       href: "#",
       description:
         "A customizable bento-style portfolio layout built for creators who want a clean, dynamic way to present their work.",
@@ -57,7 +60,8 @@ export const Projects = () => {
     },
     {
       title: "Feedback Widget System",
-      src: "feedback3.png",
+      lightSrc: "/feedback-light.png",
+      darkSrc: "/feedback-dark.png",
       href: "#",
       description:
         "A plug-and-play feedback widget that collects ratings, messages, and user insights directly from any website.",
@@ -77,7 +81,6 @@ export const Projects = () => {
     { icon: "/postgresql.svg", title: "PostgreSQL" },
     { icon: "/tailwindcss.svg", title: "Tailwind CSS" },
     { icon: "/typescript.svg", title: "TypeScript" },
-
     { icon: "/clerk.svg", title: "Clerk" },
   ];
 
@@ -91,11 +94,11 @@ export const Projects = () => {
         {Projects.map((project, idx) => (
           <div
             className="relative w-full pt-5"
-            onMouseEnter={() => setHovered(idx)}
-            onMouseLeave={() => setHovered(null)}
+            // onMouseEnter={() => setHovered(idx)}
+            // onMouseLeave={() => setHovered(null)}
             key={idx}
           >
-            {hovered === idx && (
+            {/* {hovered === idx && (
               <motion.span
                 layoutId="hovered-span"
                 className="absolute inset-0 h-full w-full bg-[#f8f8f8] dark:bg-[#0d0d0d]"
@@ -120,7 +123,7 @@ export const Projects = () => {
                   />
                 </svg>
               </motion.span>
-            )}
+            )} */}
             <div className="relative w-full">
               <div
                 key={project.title}
@@ -140,9 +143,9 @@ export const Projects = () => {
                           viewBox="0 0 24 24"
                         >
                           <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M4 5.78571C4 4.80909 4.78639 4 5.77778 4H18.2222C19.2136 4 20 4.80909 20 5.78571V15H4V5.78571ZM12 12c0-.5523.4477-1 1-1h2c.5523 0 1 .4477 1 1s-.4477 1-1 1h-2c-.5523 0-1-.4477-1-1ZM8.27586 6.31035c.38089-.39993 1.01387-.41537 1.4138-.03449l2.62504 2.5c.1981.18875.3103.45047.3103.72414 0 .27368-.1122.5354-.3103.7241l-2.62504 2.5c-.39993.3809-1.03291.3655-1.4138-.0344-.38088-.4-.36544-1.033.03449-1.4138L10.175 9.5 8.31035 7.72414c-.39993-.38089-.41537-1.01386-.03449-1.41379Z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           />
                           <path d="M2 17v1c0 1.1046.89543 2 2 2h16c1.1046 0 2-.8954 2-2v-1H2Z" />
                         </svg>
@@ -164,9 +167,9 @@ export const Projects = () => {
                                 viewBox="0 0 24 24"
                               >
                                 <path
-                                  fill-rule="evenodd"
+                                  fillRule="evenodd"
                                   d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
-                                  clip-rule="evenodd"
+                                  clipRule="evenodd"
                                 />
                               </svg>
                             </Link>
@@ -189,19 +192,23 @@ export const Projects = () => {
                           viewBox="0 0 24 24"
                         >
                           <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M11.403 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6.403a3.01 3.01 0 0 1-1.743-1.612l-3.025 3.025A3 3 0 1 1 9.99 9.768l3.025-3.025A3.01 3.01 0 0 1 11.403 5Z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           />
                           <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M13.232 4a1 1 0 0 1 1-1H20a1 1 0 0 1 1 1v5.768a1 1 0 1 1-2 0V6.414l-6.182 6.182a1 1 0 0 1-1.414-1.414L17.586 5h-3.354a1 1 0 0 1-1-1Z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           />
                         </svg>
                       </button>
                     </div>
-                    <MagneticImage src={project.src} alt={project.title} />
+                    <MagneticImage
+                      lightSrc={project.lightSrc}
+                      darkSrc={project.darkSrc}
+                      alt={project.title}
+                    />
                     <p className="px-5 py-2 text-base font-semibold text-neutral-800 dark:text-neutral-300">
                       {project.description}
                     </p>
@@ -252,14 +259,35 @@ export const Projects = () => {
   );
 };
 
-function MagneticImage({ src, alt }: { src: string; alt: string }) {
+function MagneticImage({
+  lightSrc,
+  darkSrc,
+  alt,
+}: {
+  lightSrc: string;
+  darkSrc: string;
+  alt: string;
+}) {
   return (
     <div className="relative rounded border border-neutral-200 bg-neutral-50 bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] p-3 shadow-lg [--pattern-fg:theme(colors.neutral.100)] dark:border-neutral-900 dark:bg-neutral-950 dark:[--pattern-fg:theme(colors.neutral.900)]">
-      <div>
-        <img
-          src={src}
+      <div className="w-full">
+        {/* Light mode image */}
+        <Image
+          src={lightSrc}
           alt={alt}
-          className="relative z-10 w-auto rounded border border-white object-cover shadow-lg dark:border-black"
+          width={1200}
+          height={675}
+          className="w-full rounded border border-white object-cover shadow-lg dark:hidden dark:border-neutral-900"
+          priority
+        />
+        {/* Dark mode image */}
+        <Image
+          src={darkSrc}
+          alt={alt}
+          width={1200}
+          height={675}
+          className="hidden w-full rounded border border-white object-cover shadow-lg dark:block dark:border-neutral-900"
+          priority
         />
       </div>
     </div>
