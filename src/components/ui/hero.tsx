@@ -46,15 +46,15 @@ export const Hero = () => {
             </span>
             <span className="ibm-plex-serif-semibold-italic">Thapa</span>
           </h1>
-          <div className="rounded-sm shadow-md/40 shadow-neutral-800 dark:shadow-neutral-200">
-            <p className="md:text-md flex max-w-lg items-center justify-center gap-1 rounded-sm bg-neutral-900 px-3 py-1 text-sm font-bold text-white shadow-inner shadow-neutral-400 dark:bg-neutral-50 dark:text-black dark:shadow-neutral-700">
+          <div className="mt-1 bg-gradient-to-br from-rose-500 to-teal-500 p-0.5 drop-shadow-lg drop-shadow-neutral-400 dark:drop-shadow-neutral-700">
+            <p className="md:text-md bg-neutral-700 px-3 py-1 text-sm font-semibold text-neutral-100 dark:bg-neutral-300 dark:text-neutral-900">
               Design Engineer
             </p>
           </div>
           <div className="flex gap-1 pt-2">
             <Link href="/github">
               <svg
-                className="text-gray-800 dark:text-white"
+                className="text-neutral-700 hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-neutral-200"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="28"
@@ -80,7 +80,7 @@ export const Hero = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin text-black dark:text-neutral-200"
+                className="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin text-neutral-700 hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-neutral-200"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M8 11v5" />
@@ -101,7 +101,7 @@ export const Hero = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="icon icon-tabler icons-tabler-outline icon-tabler-brand-x text-black dark:text-neutral-200"
+                className="icon icon-tabler icons-tabler-outline icon-tabler-brand-x text-neutral-700 hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-neutral-200"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M4 4l11.733 16h4.267l-11.733 -16z" />

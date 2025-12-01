@@ -8,7 +8,7 @@ export const About = () => {
       </h1>
       <p className="w-auto pt-2 pr-5 text-sm/7 text-neutral-700 md:text-base/7 dark:text-neutral-300">
         I am a{" "}
-        <span className="font-bold tracking-wide text-neutral-950 text-shadow-2xs dark:text-neutral-100">
+        <span className="font-bold tracking-normal text-neutral-950 text-shadow-2xs dark:text-neutral-100">
           FULL-STACK DEVELOPER{" "}
         </span>
         with a passion for designing great web experience with code. Helping

@@ -14,12 +14,34 @@ const Navbar = () => {
   ];
 
   return (
-    <Container className="relative border-b border-gray-200 dark:border-neutral-900">
-      <div className="flex items-center justify-between px-5 py-3">
+    <Container className="relative border-x border-b border-gray-200 bg-white dark:border-neutral-900 dark:bg-black">
+      <svg className="absolute inset-0 h-full w-full">
+        <defs>
+          <filter id="noiseFilter">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.9"
+              numOctaves="4"
+              stitchTiles="stitch"
+            />
+            <feColorMatrix type="saturate" values="0" />
+          </filter>
+        </defs>
+        <rect
+          width="100%"
+          height="100%"
+          filter="url(#noiseFilter)"
+          opacity="0.15"
+        />
+      </svg>
+      <div className="relative flex items-center justify-between px-5 py-3">
         <div className="flex items-end gap-2">
-          <h1 className="text-3xl font-semibold text-black text-shadow-md dark:text-neutral-100">
+          <Link
+            href="/"
+            className="text-3xl font-semibold text-black text-shadow-md dark:text-neutral-100"
+          >
             M.T
-          </h1>
+          </Link>
         </div>
         <div className="flex items-center justify-center gap-2">
           <div className="hidden gap-2 text-base font-medium text-neutral-700 md:flex dark:text-neutral-300">

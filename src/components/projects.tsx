@@ -58,21 +58,6 @@ export const Projects = () => {
         "🔁 Auto-responsive scaling that maintains layout structure across all screen sizes.",
       ],
     },
-    {
-      title: "Feedback Widget System",
-      lightSrc: "/feedback-light.png",
-      darkSrc: "/feedback-dark.png",
-      href: "#",
-      description:
-        "A plug-and-play feedback widget that collects ratings, messages, and user insights directly from any website.",
-      features: [
-        "⭐ 1–5 star rating with optional written feedback for detailed user insights.",
-        "💬 Message input with name/email fields for credible and actionable responses.",
-        "🌙 Auto light/dark mode detection with seamless transitions.",
-        "⚡ One-line embed script that integrates instantly with any website or framework.",
-        "📊 Clean JSON output ready for dashboards, analytics, or custom pipelines.",
-      ],
-    },
   ];
 
   const Skills = [
@@ -209,11 +194,11 @@ export const Projects = () => {
                       darkSrc={project.darkSrc}
                       alt={project.title}
                     />
-                    <p className="px-5 py-2 text-base font-semibold text-neutral-800 dark:text-neutral-300">
+                    <p className="py-2 text-base font-semibold text-neutral-800 dark:text-neutral-300">
                       {project.description}
                     </p>
 
-                    <ul className="list-disc px-9 text-sm/7 font-medium">
+                    <ul className="list-disc px-5 text-sm/7 font-medium">
                       {project.features.map((feature, featureIdx) => (
                         <li
                           className="text-neutral-700 dark:text-neutral-400"
@@ -223,7 +208,7 @@ export const Projects = () => {
                         </li>
                       ))}
                     </ul>
-                    <div className="grid grid-cols-3 gap-2 px-5 py-2 md:grid-cols-6">
+                    <div className="grid grid-cols-3 gap-2 py-2 md:grid-cols-6">
                       {Skills.map((skill, idx) => (
                         <div
                           key={skill.title}
@@ -277,7 +262,7 @@ function MagneticImage({
           alt={alt}
           width={1200}
           height={675}
-          className="w-full rounded border border-white object-cover shadow-lg dark:hidden dark:border-neutral-900"
+          className="w-full rounded border border-white mask-radial-from-70% object-cover shadow-lg dark:hidden dark:border-neutral-900"
           priority
         />
         {/* Dark mode image */}
@@ -286,7 +271,7 @@ function MagneticImage({
           alt={alt}
           width={1200}
           height={675}
-          className="hidden w-full rounded border border-white object-cover shadow-lg dark:block dark:border-neutral-900"
+          className="hidden w-full rounded border border-white mask-radial-from-70% object-cover shadow-lg dark:block dark:border-neutral-900"
           priority
         />
       </div>
