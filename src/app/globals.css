@@ -134,8 +134,10 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html,
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
 
     .ibm-plex-serif-semibold-italic {
       font-family: "IBM Plex Serif", serif;

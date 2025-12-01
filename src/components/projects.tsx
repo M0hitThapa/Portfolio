@@ -7,59 +7,15 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import Link from "next/link";
+import { Project, projects as defaultProjects } from "@/constants/projects";
 
 const spring = { damping: 3, stiffness: 50, restDelta: 0.001 };
 
-export const Projects = () => {
-  const [hovered, setHovered] = useState<number | null>(null);
-  const Projects = [
-    {
-      title: "Bento Grid UI Kit",
-      lightSrc: "/feedback-light.png",
-      darkSrc: "/feedback-dark.png",
-      href: "#",
-      description:
-        "A refined and flexible bento-style layout system designed for showcasing projects, features, and product highlights with a polished, modern look.",
-      features: [
-        "🧱 Deeply customizable grid blocks with drag-and-drop control for effortless layout building.",
-        "🎨 Intelligent theme engine with light, dark, and auto modes for adaptive aesthetics.",
-        "🌀 Smooth, expressive motion effects powered by Framer Motion for a premium feel.",
-        "📸 Support for rich media including images, GIFs, videos, and icons without breaking layout.",
-        "🔁 Advanced responsive scaling that automatically adjusts spacing and structure across devices.",
-      ],
-    },
-    {
-      title: "Responsive Blog Module",
-      lightSrc: "/feedback-light.png",
-      darkSrc: "/feedback-dark.png",
-      href: "#",
-      description:
-        "A clean, modern blogging experience optimized for readability, performance, and effortless content creation.",
-      features: [
-        "📝 Markdown editor with live preview and auto-save to streamline the writing process.",
-        "🔍 Smart fuzzy-search filtering for quickly locating relevant posts and topics.",
-        "💬 Comment system with moderation tools and built-in spam protection.",
-        "📱 Fine-tuned mobile reading experience with optimized typography and spacing.",
-        "🏷️ Organized content structure using tags, categories, metadata, and reading-time indicators.",
-      ],
-    },
-    {
-      title: "Portfolio Bento Grid",
-      lightSrc: "/feedback-light.png",
-      darkSrc: "/feedback-dark.png",
-      href: "#",
-      description:
-        "A customizable bento-style portfolio layout built for creators who want a clean, dynamic way to present their work.",
-      features: [
-        "🧱 Modular content blocks that can be reordered to match any storytelling style.",
-        "🎨 Theme customization with adjustable colors, accents, and typography presets.",
-        "🌀 Smooth hover, zoom, and reveal animations for an interactive browsing experience.",
-        "📸 Support for images, videos, animations, and icons inside individual grid tiles.",
-        "🔁 Auto-responsive scaling that maintains layout structure across all screen sizes.",
-      ],
-    },
-  ];
-
+export const Projects = ({
+  projects = defaultProjects,
+}: {
+  projects?: Project[];
+}) => {
   const Skills = [
     { icon: "/nextjs_icon_dark.svg", title: "Next.js" },
     { icon: "/nodejs.svg", title: "Node.js" },
@@ -76,45 +32,14 @@ export const Projects = () => {
       </h1>
 
       <div className="flex flex-col border-t border-neutral-200 dark:border-neutral-900">
-        {Projects.map((project, idx) => (
-          <div
-            className="relative w-full pt-5"
-            // onMouseEnter={() => setHovered(idx)}
-            // onMouseLeave={() => setHovered(null)}
-            key={idx}
-          >
-            {/* {hovered === idx && (
-              <motion.span
-                layoutId="hovered-span"
-                className="absolute inset-0 h-full w-full bg-[#f8f8f8] dark:bg-[#0d0d0d]"
-              >
-                <svg className="absolute inset-0 h-full w-full">
-                  <defs>
-                    <filter id="noiseFilter">
-                      <feTurbulence
-                        type="fractalNoise"
-                        baseFrequency="0.9"
-                        numOctaves="4"
-                        stitchTiles="stitch"
-                      />
-                      <feColorMatrix type="saturate" values="0" />
-                    </filter>
-                  </defs>
-                  <rect
-                    width="100%"
-                    height="100%"
-                    filter="url(#noiseFilter)"
-                    opacity="0.15"
-                  />
-                </svg>
-              </motion.span>
-            )} */}
+        {projects.map((project, idx) => (
+          <div className="relative w-full pt-5" key={idx}>
             <div className="relative w-full">
               <div
                 key={project.title}
-                className="relative z-10 flex items-start justify-between border-b border-neutral-200 px-5 pb-5 dark:border-neutral-900"
+                className="relative z-10 flex items-start justify-between border-b border-neutral-200 pb-5 dark:border-neutral-900"
               >
-                <div className="mx-auto items-center justify-center gap-10">
+                <div className="mx-auto items-center justify-center gap-10 px-5">
                   <div className="relative flex flex-col items-start justify-center gap-4">
                     <div className="flex w-full items-end justify-between">
                       <h1 className="flex items-center gap-2 text-lg font-semibold tracking-tight text-neutral-800 text-shadow-md md:text-xl dark:text-neutral-300">
@@ -198,7 +123,7 @@ export const Projects = () => {
                       {project.description}
                     </p>
 
-                    <ul className="list-disc px-5 text-sm/7 font-medium">
+                    <ul className="list-disc px-4 text-xs/6 font-medium md:text-sm/7">
                       {project.features.map((feature, featureIdx) => (
                         <li
                           className="text-neutral-700 dark:text-neutral-400"

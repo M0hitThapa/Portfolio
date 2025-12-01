@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Copy, Dot, Mail, Menu, X } from "lucide-react";
 import { ModeToggle } from "../mode-toggle";
 import { useState } from "react";
+import { Scales } from "../scales";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -14,7 +15,7 @@ const Navbar = () => {
   ];
 
   return (
-    <Container className="relative border-x border-b border-gray-200 bg-white dark:border-neutral-900 dark:bg-black">
+    <Container className="relative border-x border-neutral-200 bg-white px-5 md:px-8 dark:border-neutral-900 dark:bg-black">
       <svg className="absolute inset-0 h-full w-full">
         <defs>
           <filter id="noiseFilter">
@@ -34,7 +35,8 @@ const Navbar = () => {
           opacity="0.15"
         />
       </svg>
-      <div className="relative flex items-center justify-between px-5 py-3">
+      <Scales />
+      <div className="relative flex items-center justify-between border-b border-neutral-200 px-5 py-3 dark:border-neutral-900">
         <div className="flex items-end gap-2">
           <Link
             href="/"

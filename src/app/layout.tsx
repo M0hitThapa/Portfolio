@@ -24,7 +24,9 @@ export default function RootLayout({
           href="https://use.typekit.net/rzk0cgl.css"
           precedence="default"
         ></link>
-        <body className={`bg-neutral-100 antialiased dark:bg-neutral-950`}>
+        <body
+          className={`bg-neutral-100 antialiased [--pattern-fg:var(--color-neutral-950)]/5 dark:bg-neutral-950 dark:[--pattern-fg:var(--color-neutral-500)]/10`}
+        >
           <Toaster position="top-center" />
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Navbar />

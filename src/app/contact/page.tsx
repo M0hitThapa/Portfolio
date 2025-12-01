@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/contact-form";
 import Container from "@/components/container";
+import { Scales } from "@/components/scales";
 
 export default function Page() {
   return (
@@ -23,7 +24,8 @@ export default function Page() {
           opacity="0.15"
         />
       </svg>
-      <div className="relative">
+      <Scales />
+      <div className="relative px-8">
         <h1>Contact Me</h1>
         <p>I am ready to work with you contact me</p>
         <ContactForm />

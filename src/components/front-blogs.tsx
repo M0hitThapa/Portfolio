@@ -9,11 +9,11 @@ export const FrontBlogs = async () => {
   };
 
   return (
-    <div className="pt-5">
-      <h1 className="px-5 pb-3 text-lg font-semibold tracking-tight text-neutral-950 text-shadow-md md:text-2xl dark:text-neutral-100">
+    <div className="px-5 pt-5">
+      <h1 className="pb-3 text-lg font-semibold tracking-tight text-neutral-950 text-shadow-md md:text-2xl dark:text-neutral-100">
         Articles
       </h1>
-      <div className="px-5">
+      <div className="">
         {allBlogs.map((blog, idx) => (
           <Link key={blog.title} href={`/blog/${blog.slug}`}>
             <div className="flex items-center justify-between">

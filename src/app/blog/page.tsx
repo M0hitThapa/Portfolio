@@ -1,4 +1,5 @@
 import Container from "@/components/container";
+import { Scales } from "@/components/scales";
 import { getBlogs } from "@/utils/mdx";
 import { Metadata } from "next";
 import { Link } from "next-view-transitions";
@@ -36,7 +37,8 @@ export default async function BlogsPage() {
           opacity="0.15"
         />
       </svg>
-      <div className="relative">
+      <Scales />
+      <div className="relative px-8">
         <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl">
           All Blogs
         </h1>
