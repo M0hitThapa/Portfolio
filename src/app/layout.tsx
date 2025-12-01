@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import Navbar from "@/components/ui/navbar";
+import { ViewTransitions } from "next-view-transitions";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,13 +17,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <link rel="stylesheet" href="https://use.typekit.net/rzk0cgl.css"></link>
-      <body className={`bg-neutral-50 antialiased dark:bg-neutral-950`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en" suppressHydrationWarning>
+        <link
+          rel="stylesheet"
+          href="https://use.typekit.net/rzk0cgl.css"
+          precedence="default"
+        ></link>
+        <body className={`bg-neutral-100 antialiased dark:bg-neutral-950`}>
+          <Toaster position="top-center" />
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <Navbar />
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

@@ -1,5 +1,7 @@
 import { About } from "@/components/about";
 import Container from "@/components/container";
+import { Footer } from "@/components/footer";
+import { FrontBlogs } from "@/components/front-blogs";
 import { Projects } from "@/components/projects";
 import { Hero } from "@/components/ui/hero";
 import Navbar from "@/components/ui/navbar";
@@ -31,12 +33,13 @@ export default function Home() {
           />
         </svg>
         <div className="relative">
-          <Navbar />
           <Hero />
           <About />
 
           <Skills />
           <Projects />
+          <FrontBlogs />
+          <Footer />
         </div>
       </Container>
     </div>
