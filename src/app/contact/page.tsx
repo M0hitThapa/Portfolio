@@ -4,7 +4,7 @@ import { Scales } from "@/components/scales";
 
 export default function Page() {
   return (
-    <Container className="relative h-screen bg-white dark:bg-black">
+    <Container className="relative min-h-screen border-x border-gray-200 bg-white p-4 md:pt-10 md:pb-5 dark:border-neutral-900 dark:bg-black">
       <svg className="absolute inset-0 h-full w-full">
         <defs>
           <filter id="noiseFilter">
@@ -26,8 +26,13 @@ export default function Page() {
       </svg>
       <Scales />
       <div className="relative px-8">
-        <h1>Contact Me</h1>
-        <p>I am ready to work with you contact me</p>
+        <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl">
+          Contact Me
+        </h1>
+        <p className="text-secondary max-w-lg pt-4 md:text-sm">
+          Contact me through the way you are comfortable.
+        </p>
+
         <ContactForm />
       </div>
     </Container>

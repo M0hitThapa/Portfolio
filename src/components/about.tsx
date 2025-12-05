@@ -6,14 +6,20 @@ export const About = () => {
       <h1 className="text-lg font-semibold tracking-tight text-neutral-950 text-shadow-md md:text-2xl dark:text-neutral-100">
         About
       </h1>
-      <p className="w-auto pt-2 pr-5 text-sm/7 text-neutral-700 md:text-base/7 dark:text-neutral-300">
+      <p className="w-auto pt-2 pr-5 text-sm text-neutral-700 md:text-base/7 dark:text-neutral-300">
+        {" "}
         I am a{" "}
-        <span className="font-bold tracking-normal text-neutral-950 text-shadow-2xs dark:text-neutral-100">
-          FULL-STACK DEVELOPER{" "}
-        </span>
-        with a passion for designing great web experience with code. Helping
-        myself to improve daily by learning new things daily. Always ahead to
-        learn and get into new things.
+        <span className="font-semibold tracking-normal text-neutral-900 text-shadow-2xs dark:text-neutral-200">
+          {" "}
+          Frontend Developer{" "}
+        </span>{" "}
+        passionate about building great user experiences. I also possess a{" "}
+        <span className="font-semibold tracking-normal text-neutral-900 text-shadow-2xs dark:text-neutral-200">
+          {" "}
+          Foundational knowledge of backend{" "}
+        </span>{" "}
+        to understand the full development lifecycle, and I’m committed to
+        continuous learning and staying current with modern technologies.{" "}
       </p>
     </Container>
   );

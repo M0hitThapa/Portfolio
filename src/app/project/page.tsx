@@ -31,12 +31,13 @@ export default async function ProjectsPage() {
             All Projects
           </h1>
           <p className="text-secondary max-w-lg pt-4 md:text-sm">
-            I am a software engineer with a passion for building modern and
-            minimal design products. I am currently working as a software
-            engineer in microsoft.
+            All of the crafts that i have done so far. Love building projects
+            while learning and improving.
           </p>
         </div>
-        <Projects />
+        <div className="px-3">
+          <Projects />
+        </div>
       </div>
     </Container>
   );

@@ -43,9 +43,9 @@ export default async function BlogsPage() {
           All Blogs
         </h1>
         <p className="text-secondary max-w-lg pt-4 md:text-sm">
-          I am a software engineer with a passion for building modern and
-          minimal design products. I am currently working as a software engineer
-          in microsoft.
+          This is a place where i share all of my learnings to the people to
+          learn and improve themselves and from their feedback i can learn and
+          improve myself.
         </p>
         <div className="flex flex-col gap-4 py-10">
           {allBlogs.map((blog, idx) => (

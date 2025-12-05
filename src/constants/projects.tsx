@@ -9,78 +9,50 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Bento Grid UI Kit",
+    title: "Pulsea – Feedback Collection SaaS",
     lightSrc: "/feedback-light.png",
     darkSrc: "/feedback-dark.png",
     href: "#",
     description:
-      "A refined and flexible bento-style layout system designed for showcasing projects, features, and product highlights with a polished, modern look.",
+      "A powerful feedback-collection SaaS with an animated, embeddable widget that integrates seamlessly with any platform, helping teams gather user insights, bug reports, and product suggestions in one place.",
     features: [
-      "🧱 Deeply customizable grid blocks with drag-and-drop control for effortless layout building.",
-      "🎨 Intelligent theme engine with light, dark, and auto modes for adaptive aesthetics.",
-      "🌀 Smooth, expressive motion effects powered by Framer Motion for a premium feel.",
-      "📸 Support for rich media including images, GIFs, videos, and icons without breaking layout.",
-      "🔁 Advanced responsive scaling that automatically adjusts spacing and structure across devices.",
+      "⚡ Embeddable animated widget with support for screenshots, images, and bug reports.",
+      "📊 Intuitive dashboard with filtering, search, and organized tagging for feedback and bugs.",
+      "🤖 AI assistant for analyzing feedback and offering insights directly in the dashboard.",
+      "✉️ Built-in email tools and real-time updates for managing and responding to users.",
+      "🔒 Authentication powered by Clerk with full dark/light theme support.",
     ],
   },
+
   {
-    title: "Responsive Blog Module",
-    lightSrc: "/feedback-light.png",
-    darkSrc: "/feedback-dark.png",
+    title: "LinkWisp – Advanced URL Shortener",
+    lightSrc: "/url-light.png",
+    darkSrc: "/url-dark.png",
     href: "#",
     description:
-      "A clean, modern blogging experience optimized for readability, performance, and effortless content creation.",
+      "A feature-rich URL shortener offering customization, analytics, QR generation, and a clean dashboard experience powered by modern authentication and design.",
     features: [
-      "📝 Markdown editor with live preview and auto-save to streamline the writing process.",
-      "🔍 Smart fuzzy-search filtering for quickly locating relevant posts and topics.",
-      "💬 Comment system with moderation tools and built-in spam protection.",
-      "📱 Fine-tuned mobile reading experience with optimized typography and spacing.",
-      "🏷️ Organized content structure using tags, categories, metadata, and reading-time indicators.",
+      "🔗 Create short links with custom codes, edit them, and manage all URLs easily.",
+      "📊 Comprehensive analytics including clicks, devices, referrers, and public stats page.",
+      "📱 Built-in QR code generator with download support for every short link.",
+      "🔐 Authentication via email/password, Google, and GitHub using NextAuth.",
+      "🎨 Beautiful UI with full dark and light mode support.",
     ],
   },
+
   {
-    title: "Portfolio Bento Grid",
-    lightSrc: "/feedback-light.png",
-    darkSrc: "/feedback-dark.png",
+    title: "SopiaTrip – AI Travel Planner",
+    lightSrc: "/trip-light.png",
+    darkSrc: "/trip-light.png",
     href: "#",
     description:
-      "A customizable bento-style portfolio layout built for creators who want a clean, dynamic way to present their work.",
+      "An AI-powered trip planner where users chat with Sophia, an intelligent travel agent who crafts personalized travel plans with detailed itineraries, budgets, and location links.",
     features: [
-      "🧱 Modular content blocks that can be reordered to match any storytelling style.",
-      "🎨 Theme customization with adjustable colors, accents, and typography presets.",
-      "🌀 Smooth hover, zoom, and reveal animations for an interactive browsing experience.",
-      "📸 Support for images, videos, animations, and icons inside individual grid tiles.",
-      "🔁 Auto-responsive scaling that maintains layout structure across all screen sizes.",
-    ],
-  },
-  {
-    title: "Portfolio Bento Grid",
-    lightSrc: "/feedback-light.png",
-    darkSrc: "/feedback-dark.png",
-    href: "#",
-    description:
-      "A customizable bento-style portfolio layout built for creators who want a clean, dynamic way to present their work.",
-    features: [
-      "🧱 Modular content blocks that can be reordered to match any storytelling style.",
-      "🎨 Theme customization with adjustable colors, accents, and typography presets.",
-      "🌀 Smooth hover, zoom, and reveal animations for an interactive browsing experience.",
-      "📸 Support for images, videos, animations, and icons inside individual grid tiles.",
-      "🔁 Auto-responsive scaling that maintains layout structure across all screen sizes.",
-    ],
-  },
-  {
-    title: "Portfolio Bento Grid",
-    lightSrc: "/feedback-light.png",
-    darkSrc: "/feedback-dark.png",
-    href: "#",
-    description:
-      "A customizable bento-style portfolio layout built for creators who want a clean, dynamic way to present their work.",
-    features: [
-      "🧱 Modular content blocks that can be reordered to match any storytelling style.",
-      "🎨 Theme customization with adjustable colors, accents, and typography presets.",
-      "🌀 Smooth hover, zoom, and reveal animations for an interactive browsing experience.",
-      "📸 Support for images, videos, animations, and icons inside individual grid tiles.",
-      "🔁 Auto-responsive scaling that maintains layout structure across all screen sizes.",
+      "🤖 Chat with Sophia to generate personalized day-by-day itineraries and travel guidance.",
+      "📍 Includes Google Maps links, budgeting, essential tips, and backpack suggestions.",
+      "💾 Save trip plans with a dedicated dashboard for viewing and managing past trips.",
+      "🔒 Secure authentication powered by Clerk with full theme customization.",
+      "🌍 Clean, modern interface designed for effortless trip planning.",
     ],
   },
 ];

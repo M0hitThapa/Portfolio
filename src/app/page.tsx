@@ -41,7 +41,7 @@ export default function Home() {
           <About />
 
           <Skills />
-          <Projects projects={projects.slice(0, 3)} />
+          <Projects projects={projects.slice(0, 3)} title="Projects" />
           <FrontBlogs />
           <Footer />
         </div>

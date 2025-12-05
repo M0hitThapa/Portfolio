@@ -13,8 +13,10 @@ const spring = { damping: 3, stiffness: 50, restDelta: 0.001 };
 
 export const Projects = ({
   projects = defaultProjects,
+  title,
 }: {
   projects?: Project[];
+  title?: string;
 }) => {
   const Skills = [
     { icon: "/nextjs_icon_dark.svg", title: "Next.js" },
@@ -28,7 +30,7 @@ export const Projects = ({
   return (
     <Container className="pt-2">
       <h1 className="px-5 pb-3 text-lg font-semibold tracking-tight text-neutral-950 text-shadow-md md:text-2xl dark:text-neutral-100">
-        Projects
+        {title}
       </h1>
 
       <div className="flex flex-col border-t border-neutral-200 dark:border-neutral-900">
@@ -187,7 +189,7 @@ function MagneticImage({
           alt={alt}
           width={1200}
           height={675}
-          className="w-full rounded border border-white mask-radial-from-70% object-cover shadow-lg dark:hidden dark:border-neutral-900"
+          className="w-full rounded border border-white object-cover shadow-lg dark:hidden dark:border-neutral-900"
           priority
         />
         {/* Dark mode image */}
@@ -196,7 +198,7 @@ function MagneticImage({
           alt={alt}
           width={1200}
           height={675}
-          className="hidden w-full rounded border border-white mask-radial-from-70% object-cover shadow-lg dark:block dark:border-neutral-900"
+          className="hidden w-full rounded border border-white object-cover shadow-lg dark:block dark:border-neutral-900"
           priority
         />
       </div>

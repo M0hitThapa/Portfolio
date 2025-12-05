@@ -17,7 +17,7 @@ export const FrontBlogs = async () => {
         {allBlogs.map((blog, idx) => (
           <Link key={blog.title} href={`/blog/${blog.slug}`}>
             <div className="flex items-center justify-between">
-              <h1 className="text-primary text-2xl font-semibold tracking-tight">
+              <h1 className="text-primary text-2xl font-semibold tracking-tight dark:text-neutral-200">
                 {blog.title}
               </h1>
               <p className="text-secondary text-sm md:text-sm">

@@ -5,6 +5,7 @@ import path from "path";
 import { compileMDX, MDXRemote } from "next-mdx-remote/rsc";
 import { getSingleBlog } from "@/utils/mdx";
 import { redirect } from "next/navigation";
+import { Scales } from "@/components/scales";
 
 export async function generateMetadata({
   params,
@@ -40,7 +41,7 @@ export default async function SingleBlogPage({
   const { content, frontmatter } = blog;
   console.log(frontmatter);
   return (
-    <Container className="relative min-h-screen border-x border-gray-200 bg-white p-4 dark:border-neutral-900 dark:bg-black">
+    <Container className="relative min-h-screen border-x border-gray-200 bg-white p-4 px-10 dark:border-neutral-900 dark:bg-black">
       <svg className="absolute inset-0 h-full w-full">
         <defs>
           <filter id="noiseFilter">
@@ -60,6 +61,7 @@ export default async function SingleBlogPage({
           opacity="0.15"
         />
       </svg>
+      <Scales />
       <img
         src={frontmatter.image}
         alt={frontmatter.title}

@@ -47,7 +47,7 @@ export const ContactForm = () => {
       <div className="flex flex-col gap-2">
         <label
           htmlFor="name"
-          className="text-sm font-medium tracking-tight text-neutral-600"
+          className="text-sm font-medium tracking-tight text-neutral-600 dark:text-neutral-300"
         >
           Full name
         </label>
@@ -57,13 +57,14 @@ export const ContactForm = () => {
           onChange={handleChange}
           type="text"
           placeholder="Mohit Thapa"
-          className="shadow-input focus-ring-primary rounded-md px-2 py-1 text-sm focus:ring-2 focus:outline-none"
+          className="shadow-input focus-ring-primary rounded-md bg-white px-2 py-1 text-sm text-neutral-900 focus:ring-2 focus:outline-none dark:border dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:shadow-none"
         />
       </div>
+
       <div className="flex flex-col gap-2">
         <label
           htmlFor="email"
-          className="text-sm font-medium tracking-tight text-neutral-600"
+          className="text-sm font-medium tracking-tight text-neutral-600 dark:text-neutral-300"
         >
           Email
         </label>
@@ -73,15 +74,16 @@ export const ContactForm = () => {
           onChange={handleChange}
           type="text"
           placeholder="mohit@gmail.com"
-          className="shadow-input focus-ring-primary rounded-md px-2 py-1 text-sm focus:ring-2 focus:outline-none"
+          className="shadow-input focus-ring-primary rounded-md bg-white px-2 py-1 text-sm text-neutral-900 focus:ring-2 focus:outline-none dark:border dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:shadow-none"
         />
       </div>
+
       <div className="flex flex-col gap-2">
         <label
-          htmlFor="name"
-          className="text-sm font-medium tracking-tight text-neutral-600"
+          htmlFor="message"
+          className="text-sm font-medium tracking-tight text-neutral-600 dark:text-neutral-300"
         >
-          Full name
+          Message
         </label>
         <textarea
           rows={5}
@@ -89,12 +91,13 @@ export const ContactForm = () => {
           name="message"
           onChange={handleChange}
           placeholder="You are amazing"
-          className="shadow-input focus-ring-primary resize-none rounded-md px-2 py-1 text-sm focus:ring-2 focus:outline-none"
+          className="shadow-input focus-ring-primary resize-none rounded-md bg-white px-2 py-1 text-sm text-neutral-900 focus:ring-2 focus:outline-none dark:border dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:shadow-none"
         />
       </div>
+
       <button
         type="submit"
-        className="bg-primary rounded-md px-4 py-2 text-white"
+        className="bg-primary dark:bg-primary/80 rounded-md px-4 py-2 text-white"
       >
         Send Message
       </button>
