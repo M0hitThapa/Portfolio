@@ -1,11 +1,9 @@
-
-
 import { BlogHeader } from "@/components/blog-header";
 
 <BlogHeader
   title="Building a Modern Portfolio with Next.js and Tailwind CSS"
   description="A step-by-step guide to creating a stunning portfolio website using Next.js 15, Tailwind CSS v4, and modern web development best practices."
-  date="2024-11-28"
+  date="2025-09-23"
 />
 
 Creating a portfolio website is essential for showcasing your work and skills. In this tutorial, we'll build a modern, responsive portfolio using **Next.js 15** and **Tailwind CSS v4**.
@@ -66,19 +64,19 @@ The hero section is the first thing visitors see. Let's make it impactful:
 ```tsx
 export function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-950 dark:to-neutral-900">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-neutral-900 to-neutral-600 dark:from-neutral-100 dark:to-neutral-400 bg-clip-text text-transparent">
+    <section className="flex min-h-screen items-center justify-center bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-950 dark:to-neutral-900">
+      <div className="mx-auto max-w-4xl px-6 text-center">
+        <h1 className="mb-6 bg-gradient-to-r from-neutral-900 to-neutral-600 bg-clip-text text-5xl font-bold text-transparent md:text-7xl dark:from-neutral-100 dark:to-neutral-400">
           Hi, I'm Your Name
         </h1>
-        <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 mb-8">
+        <p className="mb-8 text-xl text-neutral-600 md:text-2xl dark:text-neutral-400">
           Full Stack Developer & UI/UX Enthusiast
         </p>
-        <div className="flex gap-4 justify-center">
-          <button className="px-6 py-3 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition">
+        <div className="flex justify-center gap-4">
+          <button className="rounded-lg bg-neutral-900 px-6 py-3 text-white transition hover:bg-neutral-800">
             View Projects
           </button>
-          <button className="px-6 py-3 border border-neutral-300 rounded-lg hover:bg-neutral-50 transition">
+          <button className="rounded-lg border border-neutral-300 px-6 py-3 transition hover:bg-neutral-50">
             Contact Me
           </button>
         </div>
@@ -93,7 +91,7 @@ export function Hero() {
 Tailwind CSS v4 makes dark mode implementation straightforward. Add the theme provider:
 
 ```tsx
-import { ThemeProvider } from 'next-themes';
+import { ThemeProvider } from "next-themes";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -107,7 +105,11 @@ export function Providers({ children }: { children: React.ReactNode }) {
 Then wrap your app in `layout.tsx`:
 
 ```tsx
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
@@ -129,25 +131,39 @@ const projects = [
     description: "A full-stack e-commerce solution with Next.js and Stripe",
     image: "/images/project1.jpg",
     tags: ["Next.js", "TypeScript", "Stripe"],
-    link: "https://example.com"
+    link: "https://example.com",
   },
   // More projects...
 ];
 
 export function Projects() {
   return (
-    <section className="py-20 px-6">
-      <h2 className="text-4xl font-bold text-center mb-12">Featured Projects</h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+    <section className="px-6 py-20">
+      <h2 className="mb-12 text-center text-4xl font-bold">
+        Featured Projects
+      </h2>
+      <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
-          <div key={project.title} className="border rounded-lg overflow-hidden hover:shadow-lg transition">
-            <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+          <div
+            key={project.title}
+            className="overflow-hidden rounded-lg border transition hover:shadow-lg"
+          >
+            <img
+              src={project.image}
+              alt={project.title}
+              className="h-48 w-full object-cover"
+            />
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-neutral-600 dark:text-neutral-400 mb-4">{project.description}</p>
+              <h3 className="mb-2 text-xl font-semibold">{project.title}</h3>
+              <p className="mb-4 text-neutral-600 dark:text-neutral-400">
+                {project.description}
+              </p>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="px-3 py-1 bg-neutral-100 dark:bg-neutral-800 rounded-full text-sm">
+                  <span
+                    key={tag}
+                    className="rounded-full bg-neutral-100 px-3 py-1 text-sm dark:bg-neutral-800"
+                  >
                     {tag}
                   </span>
                 ))}
@@ -168,7 +184,7 @@ export function Projects() {
 Use Next.js Image component for automatic optimization:
 
 ```tsx
-import Image from 'next/image';
+import Image from "next/image";
 
 <Image
   src="/images/project.jpg"
@@ -177,7 +193,7 @@ import Image from 'next/image';
   height={600}
   className="rounded-lg"
   priority
-/>
+/>;
 ```
 
 ### Font Optimization
@@ -185,9 +201,9 @@ import Image from 'next/image';
 Next.js 15 includes automatic font optimization:
 
 ```tsx
-import { Inter } from 'next/font/google';
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
@@ -232,4 +248,4 @@ Start building your portfolio today and showcase your amazing work to the world!
 
 ---
 
-*Happy coding! 🚀*
+_Happy coding! 🚀_
