@@ -26,10 +26,10 @@ export default function Page() {
       </svg>
       <Scales />
       <div className="relative px-8">
-        <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl">
+        <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl dark:text-neutral-200">
           Contact Me
         </h1>
-        <p className="text-secondary max-w-lg pt-4 md:text-sm">
+        <p className="text-secondary max-w-lg pt-4 md:text-sm dark:text-neutral-500">
           Contact me through the way you are comfortable.
         </p>
 

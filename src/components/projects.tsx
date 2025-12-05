@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import Link from "next/link";
-import { Project, projects as defaultProjects } from "@/constants/projects";
+import { Project, projects as defaultProjects, skills } from "@/constants/projects";
 
 const spring = { damping: 3, stiffness: 50, restDelta: 0.001 };
 
@@ -18,14 +18,6 @@ export const Projects = ({
   projects?: Project[];
   title?: string;
 }) => {
-  const Skills = [
-    { icon: "/nextjs_icon_dark.svg", title: "Next.js" },
-    { icon: "/nodejs.svg", title: "Node.js" },
-    { icon: "/postgresql.svg", title: "PostgreSQL" },
-    { icon: "/tailwindcss.svg", title: "Tailwind CSS" },
-    { icon: "/typescript.svg", title: "TypeScript" },
-    { icon: "/clerk.svg", title: "Clerk" },
-  ];
 
   return (
     <Container className="pt-2">
@@ -66,7 +58,9 @@ export const Projects = ({
                         <Tooltip>
                           <TooltipTrigger asChild>
                             <Link
-                              href="/github"
+                              href={project.githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
                               className="rounded-md border-2 border-neutral-300 p-1 shadow-inner shadow-neutral-200 dark:border-neutral-700 dark:shadow-neutral-800"
                             >
                               <svg
@@ -92,7 +86,12 @@ export const Projects = ({
                         </Tooltip>
                       </h1>
 
-                      <button className="flex cursor-pointer items-center justify-center gap-0.5 rounded-sm border-2 border-neutral-300 px-1.5 py-1 text-sm font-semibold text-black inset-shadow-sm dark:border-neutral-800 dark:text-white dark:inset-shadow-neutral-900">
+                      <Link
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex cursor-pointer items-center justify-center gap-0.5 rounded-sm border-2 border-neutral-300 px-1.5 py-1 text-sm font-semibold text-black inset-shadow-sm dark:border-neutral-800 dark:text-white dark:inset-shadow-neutral-900"
+                      >
                         <span>open live</span>
                         <svg
                           className="size-5 text-gray-800 dark:text-white"
@@ -114,7 +113,7 @@ export const Projects = ({
                             clipRule="evenodd"
                           />
                         </svg>
-                      </button>
+                      </Link>
                     </div>
                     <MagneticImage
                       lightSrc={project.lightSrc}
@@ -136,28 +135,32 @@ export const Projects = ({
                       ))}
                     </ul>
                     <div className="grid grid-cols-3 gap-2 py-2 md:grid-cols-6">
-                      {Skills.map((skill, idx) => (
-                        <div
-                          key={skill.title}
-                          className="shadow-input flex cursor-pointer items-center justify-center gap-0.5 rounded border border-neutral-300 inset-shadow-sm dark:border-neutral-800 dark:inset-shadow-neutral-900"
-                        >
-                          <Link
-                            href={"https://nextjs.org/"}
-                            className="flex items-center justify-center gap-1 px-1 py-1.5"
+                      {skills
+                        .filter((skill) => project.skills.includes(skill.title))
+                        .map((skill, idx) => (
+                          <div
+                            key={skill.title}
+                            className="shadow-input flex cursor-pointer items-center justify-center gap-0.5 rounded border border-neutral-300 inset-shadow-sm dark:border-neutral-800 dark:inset-shadow-neutral-900"
                           >
-                            <Image
-                              src={skill.icon}
-                              alt="skills"
-                              height={14}
-                              width={14}
-                              className="h-4 w-4"
-                            />
-                            <h1 className="text-xs font-medium text-neutral-800 dark:text-neutral-400">
-                              {skill.title}
-                            </h1>
-                          </Link>
-                        </div>
-                      ))}
+                            <Link
+                              href={skill.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-center gap-1 px-1 py-1.5"
+                            >
+                              <Image
+                                src={skill.icon}
+                                alt={skill.title}
+                                height={14}
+                                width={14}
+                                className="h-4 w-4"
+                              />
+                              <h1 className="text-xs font-medium text-neutral-800 dark:text-neutral-400">
+                                {skill.title}
+                              </h1>
+                            </Link>
+                          </div>
+                        ))}
                     </div>
                   </div>
                 </div>

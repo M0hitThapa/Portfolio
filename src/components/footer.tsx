@@ -5,22 +5,26 @@ import {
   IconBrandLinkedin,
   IconBrandX,
 } from "@tabler/icons-react";
+import CalWidget from "./cal-widget";
 
 export const Footer = () => {
   return (
-    <Container className="flex justify-between border-t border-neutral-200 px-5 py-3 dark:border-neutral-900">
-      <p className="text-xs text-neutral-500">Build with love by Mohit Thapa</p>
-      <div className="flex items-center justify-center gap-4 text-sm text-neutral-500">
+    <Container className="flex flex-col border-t border-neutral-200 dark:border-neutral-900 px-5 py-3 items-center justify-center">
+      <h1 className="text-xl font-semibold text-shadow-xl pb-5 text-neutral-800 dark:text-neutral-300">I am Available here..</h1>
+      <CalWidget />
+      <div className="flex items-center pt-5 justify-center gap-4 text-sm text-neutral-500">
         <Link href="https://x.com/manuaaji">
-          <IconBrandX className="size-4 text-neutral-500 hover:text-neutral-700" />
+          <IconBrandX className="size-8 text-neutral-500 hover:text-neutral-700" />
         </Link>
         <Link href="https://x.com/manuaaji">
-          <IconBrandLinkedin className="size-4 text-neutral-500 hover:text-neutral-700" />
+          <IconBrandLinkedin className="size-8 text-neutral-500 hover:text-neutral-700" />
         </Link>
         <Link href="https://x.com/manuaaji">
-          <IconBrandGithub className="size-4 text-neutral-500 hover:text-neutral-700" />
+          <IconBrandGithub className="size-8 text-neutral-500 hover:text-neutral-700" />
         </Link>
       </div>
+      <p className="text-xs pt-5 text-neutral-500">Build by Mohit Thapa with Love.</p>
+
     </Container>
   );
 };

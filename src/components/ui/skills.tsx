@@ -16,11 +16,12 @@ const svgIcons = [
   { icon: "/neon.svg", title: "Neon" },
   { icon: "/nodejs.svg", title: "Node.js" },
   { icon: "/clerk.svg", title: "Clerk" },
-  { icon: "/better-auth.svg", title: "Better-Auth" },
-  { icon: "/aws_light.svg", title: "AWS" },
-  { icon: "/cloudflare-workers.svg", title: "Cloudflare Workers" },
-  { icon: "/docker.svg", title: "Docker" },
-  { icon: "/neovim.svg", title: "Neovim" },
+  { icon: "/supabase.svg", title: "Supabase" },
+  { icon: "/tanstack.svg", title: "TanStack" },
+
+
+  { icon: "/authjs.svg", title: "AuthJS" },
+
 ];
 
 export const Skills = () => {

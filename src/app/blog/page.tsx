@@ -39,10 +39,10 @@ export default async function BlogsPage() {
       </svg>
       <Scales />
       <div className="relative px-8">
-        <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl">
+        <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl dark:text-neutral-200">
           All Blogs
         </h1>
-        <p className="text-secondary max-w-lg pt-4 md:text-sm">
+        <p className="text-secondary max-w-lg pt-4 md:text-sm dark:text-neutral-500">
           This is a place where i share all of my learnings to the people to
           learn and improve themselves and from their feedback i can learn and
           improve myself.
@@ -51,7 +51,7 @@ export default async function BlogsPage() {
           {allBlogs.map((blog, idx) => (
             <Link key={blog.title} href={`/blog/${blog.slug}`}>
               <div className="flex items-center justify-between">
-                <h1 className="text-primary text-2xl font-semibold tracking-tight">
+                <h1 className="text-primary text-2xl font-semibold tracking-tight dark:text-neutral-300">
                   {blog.title}
                 </h1>
                 <p className="text-secondary text-sm md:text-sm">

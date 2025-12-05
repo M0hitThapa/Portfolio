@@ -27,7 +27,7 @@ export default async function ProjectsPage() {
       <Scales />
       <div className="relative">
         <div className="px-8">
-          <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl">
+          <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl dark:text-neutral-200">
             All Projects
           </h1>
           <p className="text-secondary max-w-lg pt-4 md:text-sm">

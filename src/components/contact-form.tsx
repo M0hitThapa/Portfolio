@@ -1,8 +1,16 @@
 "use client";
 import { useState } from "react";
 import { toast } from "sonner";
+import emailjs from "@emailjs/browser";
 
 export const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("handle submit clicked");
@@ -13,24 +21,33 @@ export const ContactForm = () => {
       return;
     }
 
-    const response = await new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve("APi call successful");
-      }, 1000);
-    });
+    setIsSubmitting(true);
 
-    if (response) {
-      toast.success("APi call successful");
-    } else {
-      toast.error("something went wrong");
+    try {
+      // Initialize EmailJS with public key first
+      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
+
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: name,
+          from_email: email,
+          message: message,
+          to_name: "Mohit", // Add recipient name if needed
+        },
+      );
+
+      console.log("EmailJS result:", result);
+      toast.success("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
 
   const handleChange = (
     e:
@@ -39,6 +56,7 @@ export const ContactForm = () => {
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -54,10 +72,12 @@ export const ContactForm = () => {
         <input
           id="name"
           name="name"
+          value={formData.name}
           onChange={handleChange}
           type="text"
           placeholder="Mohit Thapa"
-          className="shadow-input focus-ring-primary rounded-md bg-white px-2 py-1 text-sm text-neutral-900 focus:ring-2 focus:outline-none dark:border dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:shadow-none"
+          required
+          className="shadow-input focus-ring-primary rounded bg-white px-2 py-2 text-sm text-neutral-900 focus:ring-2 focus:outline-none dark:border dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:shadow-none"
         />
       </div>
 
@@ -71,10 +91,12 @@ export const ContactForm = () => {
         <input
           id="email"
           name="email"
+          value={formData.email}
           onChange={handleChange}
-          type="text"
+          type="email"
           placeholder="mohit@gmail.com"
-          className="shadow-input focus-ring-primary rounded-md bg-white px-2 py-1 text-sm text-neutral-900 focus:ring-2 focus:outline-none dark:border dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:shadow-none"
+          required
+          className="shadow-input focus-ring-primary rounded bg-white px-2 py-2 text-sm text-neutral-900 focus:ring-2 focus:outline-none dark:border dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:shadow-none"
         />
       </div>
 
@@ -89,17 +111,20 @@ export const ContactForm = () => {
           rows={5}
           id="message"
           name="message"
+          value={formData.message}
           onChange={handleChange}
           placeholder="You are amazing"
-          className="shadow-input focus-ring-primary resize-none rounded-md bg-white px-2 py-1 text-sm text-neutral-900 focus:ring-2 focus:outline-none dark:border dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:shadow-none"
+          required
+          className="shadow-input focus-ring-primary resize-none rounded bg-white px-2 py-2 text-sm text-neutral-900 focus:ring-2 focus:outline-none dark:border dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:shadow-none"
         />
       </div>
 
       <button
         type="submit"
-        className="bg-primary dark:bg-primary/80 rounded-md px-4 py-2 text-white"
+        disabled={isSubmitting}
+        className="bg-primary cursor-pointer rounded px-4 py-2 text-white disabled:cursor-not-allowed disabled:opacity-50 dark:bg-neutral-300 dark:text-neutral-950"
       >
-        Send Message
+        {isSubmitting ? "Sending..." : "Send Message"}
       </button>
     </form>
   );
