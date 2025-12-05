@@ -5,7 +5,7 @@ import {
   IconBrandLinkedin,
   IconBrandX,
 } from "@tabler/icons-react";
-import CalWidget from "./cal-widget";
+import CalWidget from "./cal-widget-wrapper";
 
 export const Footer = () => {
   return (

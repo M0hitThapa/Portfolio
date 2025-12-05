@@ -1,6 +1,7 @@
+import { BlogHeader } from "@/components/blog-header";
 import Container from "@/components/container";
 import { Scales } from "@/components/scales";
-import { getBlogs } from "@/utils/mdx";
+import { getBlogs } from "@/utils/blogs";
 import { Metadata } from "next";
 import { Link } from "next-view-transitions";
 
@@ -42,35 +43,16 @@ export default async function BlogsPage() {
         <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl dark:text-neutral-200">
           All Blogs
         </h1>
-        <p className="text-secondary max-w-lg pt-4 md:text-sm dark:text-neutral-500">
-          This is a place where i share all of my learnings to the people to
-          learn and improve themselves and from their feedback i can learn and
-          improve myself.
+        <p className="text-secondary max-w-lg pt-4 pb-10 md:text-sm dark:text-neutral-500">
+          sharing things as i learn
         </p>
-        <div className="flex flex-col gap-4 py-10">
-          {allBlogs.map((blog, idx) => (
-            <Link key={blog.title} href={`/blog/${blog.slug}`}>
-              <div className="flex items-center justify-between">
-                <h1 className="text-primary text-2xl font-semibold tracking-tight dark:text-neutral-300">
-                  {blog.title}
-                </h1>
-                <p className="text-secondary text-sm md:text-sm">
-                  {blog.date
-                    ? new Date(blog.date).toLocaleDateString("en-us", {
-                        weekday: "long",
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      })
-                    : "No date"}
-                </p>
-              </div>
-              <div className="text-secondary max-w-lg pt-4 text-sm md:text-sm">
-                {truncate(blog.description || "", 150)}
-              </div>
-            </Link>
-          ))}
-        </div>
+        <Link href="/blog/nextjs-portfolio-guide">
+          <BlogHeader
+            title="Building a Modern Portfolio with Next.js and Tailwind CSS"
+            description="A step-by-step guide to creating a stunning portfolio website using Next.js 15, Tailwind CSS v4, and modern web development best practices."
+            date="2025-09-23"
+          />{" "}
+        </Link>
       </div>
     </Container>
   );

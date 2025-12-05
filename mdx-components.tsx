@@ -1,6 +1,6 @@
 import type { MDXComponents } from "mdx/types";
 import Image from "next/image";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 
 const components: MDXComponents = {
   h1: ({ children }) => (
@@ -56,7 +56,7 @@ const components: MDXComponents = {
       );
     }
     return (
-      <code className={`${className} font-mono text-sm`}>{children}</code>
+      <code className={`${className} font-mono text-sm text-neutral-800 dark:text-neutral-200`}>{children}</code>
     );
   },
   pre: ({ children }) => (

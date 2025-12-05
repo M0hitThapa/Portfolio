@@ -1,5 +1,6 @@
-import { getBlogs } from "@/utils/mdx";
+import { getBlogs } from "@/utils/blogs";
 import { Link } from "next-view-transitions";
+import { BlogHeader } from "./blog-header";
 
 export const FrontBlogs = async () => {
   const allBlogs = await getBlogs();
@@ -13,11 +14,11 @@ export const FrontBlogs = async () => {
       <h1 className="pb-3 text-lg font-semibold tracking-tight text-neutral-950 text-shadow-md md:text-2xl dark:text-neutral-100">
         Articles
       </h1>
-      <div className="">
-        {allBlogs.map((blog, idx) => (
+      <div className="flex flex-col gap-4 py-10">
+        {/* {allBlogs.map((blog, idx) => (
           <Link key={blog.title} href={`/blog/${blog.slug}`}>
             <div className="flex items-center justify-between">
-              <h1 className="text-primary text-2xl font-semibold tracking-tight dark:text-neutral-200">
+              <h1 className="text-primary text-2xl font-semibold tracking-tight dark:text-neutral-300">
                 {blog.title}
               </h1>
               <p className="text-secondary text-sm md:text-sm">
@@ -35,7 +36,14 @@ export const FrontBlogs = async () => {
               {truncate(blog.description || "", 150)}
             </div>
           </Link>
-        ))}
+        ))} */}
+        <Link href="/blog/nextjs-portfolio-guide">
+          <BlogHeader
+            title="Building a Modern Portfolio with Next.js and Tailwind CSS"
+            description="A step-by-step guide to creating a stunning portfolio website using Next.js 15, Tailwind CSS v4, and modern web development best practices."
+            date="2025-09-23"
+          />{" "}
+        </Link>
       </div>
     </div>
   );

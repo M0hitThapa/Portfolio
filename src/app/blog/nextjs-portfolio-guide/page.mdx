@@ -1,0 +1,235 @@
+
+
+import { BlogHeader } from "@/components/blog-header";
+
+<BlogHeader
+  title="Building a Modern Portfolio with Next.js and Tailwind CSS"
+  description="A step-by-step guide to creating a stunning portfolio website using Next.js 15, Tailwind CSS v4, and modern web development best practices."
+  date="2024-11-28"
+/>
+
+Creating a portfolio website is essential for showcasing your work and skills. In this tutorial, we'll build a modern, responsive portfolio using **Next.js 15** and **Tailwind CSS v4**.
+
+## Why Next.js and Tailwind?
+
+Next.js and Tailwind CSS are a powerful combination for building modern web applications:
+
+- **Next.js**: React framework with server-side rendering, routing, and optimization
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development
+- **Performance**: Built-in optimizations for images, fonts, and code splitting
+- **Developer Experience**: Hot reloading, TypeScript support, and great tooling
+
+## Project Setup
+
+Let's start by creating a new Next.js project:
+
+```bash
+npx create-next-app@latest my-portfolio
+cd my-portfolio
+npm run dev
+```
+
+When prompted, select these options:
+
+- TypeScript: **Yes**
+- ESLint: **Yes**
+- Tailwind CSS: **Yes**
+- App Router: **Yes**
+
+## Project Structure
+
+Here's the recommended folder structure:
+
+```
+my-portfolio/
+├── src/
+│   ├── app/
+│   │   ├── page.tsx
+│   │   ├── layout.tsx
+│   │   └── globals.css
+│   ├── components/
+│   │   ├── Header.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Projects.tsx
+│   │   └── Footer.tsx
+│   └── data/
+│       └── projects.ts
+├── public/
+│   └── images/
+└── package.json
+```
+
+## Creating the Hero Section
+
+The hero section is the first thing visitors see. Let's make it impactful:
+
+```tsx
+export function Hero() {
+  return (
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-950 dark:to-neutral-900">
+      <div className="max-w-4xl mx-auto px-6 text-center">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-neutral-900 to-neutral-600 dark:from-neutral-100 dark:to-neutral-400 bg-clip-text text-transparent">
+          Hi, I'm Your Name
+        </h1>
+        <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 mb-8">
+          Full Stack Developer & UI/UX Enthusiast
+        </p>
+        <div className="flex gap-4 justify-center">
+          <button className="px-6 py-3 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition">
+            View Projects
+          </button>
+          <button className="px-6 py-3 border border-neutral-300 rounded-lg hover:bg-neutral-50 transition">
+            Contact Me
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+```
+
+## Dark Mode Support
+
+Tailwind CSS v4 makes dark mode implementation straightforward. Add the theme provider:
+
+```tsx
+import { ThemeProvider } from 'next-themes';
+
+export function Providers({ children }: { children: React.ReactNode }) {
+  return (
+    <ThemeProvider attribute="class" defaultTheme="system">
+      {children}
+    </ThemeProvider>
+  );
+}
+```
+
+Then wrap your app in `layout.tsx`:
+
+```tsx
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
+}
+```
+
+## Projects Section
+
+Display your work with a clean grid layout:
+
+```tsx
+const projects = [
+  {
+    title: "E-commerce Platform",
+    description: "A full-stack e-commerce solution with Next.js and Stripe",
+    image: "/images/project1.jpg",
+    tags: ["Next.js", "TypeScript", "Stripe"],
+    link: "https://example.com"
+  },
+  // More projects...
+];
+
+export function Projects() {
+  return (
+    <section className="py-20 px-6">
+      <h2 className="text-4xl font-bold text-center mb-12">Featured Projects</h2>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {projects.map((project) => (
+          <div key={project.title} className="border rounded-lg overflow-hidden hover:shadow-lg transition">
+            <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+              <p className="text-neutral-600 dark:text-neutral-400 mb-4">{project.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="px-3 py-1 bg-neutral-100 dark:bg-neutral-800 rounded-full text-sm">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+```
+
+## Performance Optimization
+
+### Image Optimization
+
+Use Next.js Image component for automatic optimization:
+
+```tsx
+import Image from 'next/image';
+
+<Image
+  src="/images/project.jpg"
+  alt="Project"
+  width={800}
+  height={600}
+  className="rounded-lg"
+  priority
+/>
+```
+
+### Font Optimization
+
+Next.js 15 includes automatic font optimization:
+
+```tsx
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" className={inter.className}>
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+## Deployment
+
+Deploy your portfolio to Vercel with these steps:
+
+1. Push your code to GitHub
+2. Import your repository on Vercel
+3. Configure build settings (usually auto-detected)
+4. Deploy!
+
+Your portfolio will be live at `your-project.vercel.app`.
+
+## Best Practices
+
+Here are some tips for a great portfolio:
+
+1. **Keep it simple** - Focus on your best work
+2. **Make it fast** - Optimize images and code
+3. **Mobile-first** - Ensure responsive design
+4. **Add analytics** - Track visitor behavior
+5. **Update regularly** - Keep content fresh
+
+## Conclusion
+
+You now have a modern, performant portfolio built with Next.js and Tailwind CSS. The combination of these technologies provides:
+
+- **Fast performance** with server-side rendering
+- **Beautiful UI** with utility-first CSS
+- **Great SEO** with Next.js metadata API
+- **Easy deployment** with Vercel
+
+Start building your portfolio today and showcase your amazing work to the world!
+
+---
+
+*Happy coding! 🚀*
