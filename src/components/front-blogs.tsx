@@ -9,7 +9,7 @@ export const FrontBlogs = async () => {
   };
 
   return (
-    <div className="px-5 pt-5">
+    <div className="px-5 py-5">
       <h1 className="pb-3 text-lg font-semibold tracking-tight text-neutral-950 text-shadow-md md:text-2xl dark:text-neutral-100">
         Articles
       </h1>
@@ -23,11 +23,11 @@ export const FrontBlogs = async () => {
               <p className="text-secondary text-sm md:text-sm">
                 {blog.date
                   ? new Date(blog.date).toLocaleDateString("en-us", {
-                      weekday: "long",
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    })
+                    weekday: "long",
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  })
                   : "No date"}
               </p>
             </div>
