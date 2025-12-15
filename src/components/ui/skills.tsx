@@ -19,9 +19,7 @@ const svgIcons = [
   { icon: "/supabase.svg", title: "Supabase" },
   { icon: "/tanstack.svg", title: "TanStack" },
 
-
   { icon: "/authjs.svg", title: "AuthJS" },
-
 ];
 
 export const Skills = () => {

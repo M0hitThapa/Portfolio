@@ -15,9 +15,9 @@ export default function CalWidget() {
             data-cal-namespace="30min"
             data-cal-link="mohit-thapa/30min"
             data-cal-config='{"layout":"month_view"}'
-            className="bg-neutral-900 flex gap-2 items-center justify-center font-semibold hover:bg-neutral-800 dark:hover:bg-neutral-200 px-4 py-1 cursor-pointer shadow-inner shadow-neutral-500 dark:shadow-neutral-600 rounded text-neutral-100 dark:text-neutral-900 dark:bg-neutral-200"
+            className=" flex gap-2 items-center justify-center bg-neutral-200 dark:bg-neutral-900 font-semibold  rounded text-neutral-700 dark:text-neutral-100 border border-neutral-200 cursor-pointer px-8 py-1 rounded shadow-inner shadow-neutral-200 dark:shadow-neutral-900 dark:border-neutral-900"
         >
-            <Image src="/profile.png" alt="profile image" height={100} width={100} className="size-5 rounded-full border-neutral-500 dark:border-neutral-300 bg-yellow-500" />
+            <Image src="/profile.png" alt="profile image" height={120} width={120} className="size-6 rounded-full border-neutral-500 dark:border-neutral-300 bg-cyan-500" />
             Connect
         </button>
     );
