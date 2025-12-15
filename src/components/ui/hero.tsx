@@ -52,7 +52,7 @@ export const Hero = () => {
             </p>
           </div>
           <div className="flex gap-1 pt-2">
-            <Link href="/github">
+            <Link href="https://github.com/M0hitThapa">
               <svg
                 className="text-neutral-700 hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-neutral-200"
                 aria-hidden="true"
@@ -69,7 +69,7 @@ export const Hero = () => {
                 />
               </svg>
             </Link>
-            <Link href="/linkedin">
+            <Link href="https://www.linkedin.com/in/mohit-thapa-859a69300/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="28"
@@ -90,7 +90,7 @@ export const Hero = () => {
                 <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
               </svg>
             </Link>
-            <Link href="/twitter">
+            <Link href="https://x.com/ThapaMohit49320">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="28"

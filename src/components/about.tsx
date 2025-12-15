@@ -13,14 +13,13 @@ export const About = () => {
           {" "}
           Frontend Developer{" "}
         </span>{" "}
-        passionate about building great user experiences. I also possess a{" "}
-        <span className="font-semibold tracking-normal text-neutral-900 text-shadow-2xs dark:text-neutral-200">
+      passionate about creating great user experiences, with a solid foundation in  <span className="font-semibold tracking-normal text-neutral-900 text-shadow-2xs dark:text-neutral-200">
           {" "}
-          Foundational knowledge of backend{" "}
-        </span>{" "}
-        to understand the full development lifecycle, and I’m committed to
-        continuous learning and staying current with modern technologies.{" "}
+         backend development{" "}
+        </span>{" "} and a commitment to continuous learning and modern technologies.
+        
       </p>
     </Container>
   );
 };
+

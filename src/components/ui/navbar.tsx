@@ -1,6 +1,6 @@
 "use client";
 import Container from "../container";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { Copy, Dot, Mail, Menu, X } from "lucide-react";
 import { ModeToggle } from "../mode-toggle";
 import { useState } from "react";
@@ -11,7 +11,9 @@ const Navbar = () => {
   const navItems = [
     { title: "Projects", link: "/project" },
     { title: "Blogs", link: "/blog" },
+    { title: "Gallery", link: "/gallery" },
     { title: "Contact", link: "/contact" },
+
   ];
 
   return (
@@ -63,7 +65,7 @@ const Navbar = () => {
             className="md:hidden"
             aria-label="Toggle menu"
           >
-            {open ? <X /> : <Menu />}
+            {open ? <X /> : <Menu className="text-neutral-700 dark:text-neutral-300" />}
           </button>
         </div>
       </div>

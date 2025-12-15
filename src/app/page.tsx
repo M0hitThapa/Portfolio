@@ -2,6 +2,8 @@ import { About } from "@/components/about";
 import Container from "@/components/container";
 import { Footer } from "@/components/footer";
 import { FrontBlogs } from "@/components/front-blogs";
+import { Gallery } from "@/components/gallery";
+import GitHubGraph from "@/components/github-graph";
 import { Projects } from "@/components/projects";
 import { Scales } from "@/components/scales";
 import { Hero } from "@/components/ui/hero";
@@ -43,6 +45,8 @@ export default function Home() {
           <Skills />
           <Projects projects={projects.slice(0, 3)} title="Projects" />
           <FrontBlogs />
+          <GitHubGraph />
+          <Gallery />
           <Footer />
         </div>
       </Container>
