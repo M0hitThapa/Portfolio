@@ -13,7 +13,6 @@ const Navbar = () => {
     { title: "Blogs", link: "/blog" },
     { title: "Gallery", link: "/gallery" },
     { title: "Contact", link: "/contact" },
-
   ];
 
   return (
@@ -65,7 +64,11 @@ const Navbar = () => {
             className="md:hidden"
             aria-label="Toggle menu"
           >
-            {open ? <X /> : <Menu className="text-neutral-700 dark:text-neutral-300" />}
+            {open ? (
+              <X className="text-neutral-700 dark:text-neutral-300" />
+            ) : (
+              <Menu className="text-neutral-700 dark:text-neutral-300" />
+            )}
           </button>
         </div>
       </div>
@@ -96,7 +99,7 @@ const Navbar = () => {
             {navItems.map((item, idx) => (
               <Link
                 key={idx}
-                className="rounded-md px-2 py-3 font-semibold text-neutral-700 transition-all duration-300 hover:bg-neutral-200 dark:text-neutral-300 dark:hover:bg-neutral-800"
+                className="relative rounded-md px-2 py-3 font-semibold text-neutral-700 transition-all duration-300 hover:bg-neutral-200 dark:text-neutral-300 dark:hover:bg-neutral-800"
                 href={item.link}
                 onClick={() => setOpen(false)}
               >
@@ -104,6 +107,7 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
+          <Scales />
         </div>
       )}
     </Container>
