@@ -48,11 +48,19 @@ export default async function BlogsPage() {
         </p>
         <Link href="/blog/nextjs-portfolio-guide">
           <BlogHeader
-            title="Building a Modern Portfolio with Next.js and Tailwind CSS"
+            title="Building a Modern Portfolio"
             description="A step-by-step guide to creating a stunning portfolio website using Next.js 15, Tailwind CSS v4, and modern web development best practices."
             date="2025-09-23"
           />{" "}
         </Link>
+        <Link href="/blog/tailwind-basics">
+          <BlogHeader
+            title="learn tailwind basics through first principle"
+            description="A step-by-step guide to creating stunnign and Beautiful ui using tailwind css."
+            date="2025-10-10"
+          />{" "}
+        </Link>
+
       </div>
     </Container>
   );
