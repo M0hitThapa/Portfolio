@@ -51,9 +51,9 @@ export const Hero = () => {
             </span>
             <span className="ibm-plex-serif-semibold-italic">Thapa</span>
           </h1>
-          <div className="mt-1 bg-gradient-to-br from-rose-500 to-teal-500 p-0.5 drop-shadow-lg drop-shadow-neutral-400 dark:drop-shadow-neutral-700">
+          <div className="mt-1 bg-linear-to-br from-rose-500 to-teal-500 p-0.5 drop-shadow-lg drop-shadow-neutral-400 dark:drop-shadow-neutral-700">
             <p className="md:text-md bg-neutral-700 px-3 py-1 text-sm font-semibold text-neutral-100 dark:bg-neutral-300 dark:text-neutral-900">
-              Design Engineer
+              Full-Stack Developer
             </p>
           </div>
           <div className="flex gap-4 pt-2 text-sm text-neutral-500">

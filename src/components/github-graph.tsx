@@ -20,9 +20,9 @@ export default function GitHubGraph() {
       <div className="pt-4">
         <GitHubCalendar
           username="M0hitThapa"
-          blockSize={10}
-          blockMargin={3.9}
-          fontSize={10}
+          blockSize={9}
+          blockMargin={3.8}
+          fontSize={9}
           colorScheme={theme === "dark" ? "dark" : "light"}
           theme={{
             light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
