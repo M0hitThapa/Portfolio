@@ -3,9 +3,13 @@ import Container from "./container";
 import Image from "next/image";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import Link from "next/link";
-import { Project, projects as defaultProjects, skills } from "@/constants/projects";
+import {
+  Project,
+  projects as defaultProjects,
+  skills,
+} from "@/constants/projects";
 import { useState } from "react";
-import { hover, motion } from "motion/react"
+import { hover, motion } from "motion/react";
 
 export const Projects = ({
   projects = defaultProjects,
@@ -23,15 +27,12 @@ export const Projects = ({
         </h1>
       )}
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 px-5 relative">
-
+      <div className="relative grid grid-cols-1 gap-4 px-5 md:grid-cols-2">
         {projects.map((project, idx) => (
-
           <Link
             href={`/project/${project.slug}`}
             key={idx}
-            className="relative hover:bg-neutral-100 dark:hover:bg-neutral-900 flex flex-col z-10 overflow-hidden rounded-sm  border border-neutral-100 shadow-input dark:border-neutral-900 transition-all p-2 "
-
+            className="shadow-input relative z-10 flex flex-col overflow-hidden rounded-sm border border-neutral-100 p-2 transition-all hover:bg-neutral-100 dark:border-neutral-900 dark:hover:bg-neutral-900"
           >
             {/* {hovered === idx && (
               <motion.span
@@ -40,23 +41,22 @@ export const Projects = ({
               />
             )} */}
 
-
             <div className="relative aspect-video w-full overflow-hidden bg-neutral-100 dark:bg-neutral-900">
               <Image
                 src={project.lightSrc}
                 alt={project.title}
                 fill
-                className="object-cover object-top transition-transform duration-500  dark:hidden"
+                className="object-cover object-top transition-transform duration-500 dark:hidden"
               />
               <Image
                 src={project.darkSrc}
                 alt={project.title}
                 fill
-                className="hidden object-cover object-top transition-transform duration-500  dark:block"
+                className="hidden object-cover object-top transition-transform duration-500 dark:block"
               />
             </div>
 
-            <div className="flex flex-1 flex-col p-4 relative">
+            <div className="relative flex flex-1 flex-col p-4">
               <div className="mb-2 flex items-center justify-between">
                 <h2 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
                   {project.title}
@@ -99,7 +99,7 @@ export const Projects = ({
                       e.stopPropagation();
                       window.open(project.githubUrl, "_blank");
                     }}
-                    className="flex cursor-pointer relative items-center justify-center rounded-md border border-neutral-200 p-1.5 text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-900 dark:hover:text-neutral-100"
+                    className="relative flex cursor-pointer items-center justify-center rounded-md border border-neutral-200 p-1.5 text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-900 dark:hover:text-neutral-100"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -115,11 +115,11 @@ export const Projects = ({
                 </div>
               </div>
 
-              <p className="mb-4 line-clamp-2 relative text-sm text-neutral-600 dark:text-neutral-400">
+              <p className="relative mb-4 line-clamp-2 text-sm text-neutral-600 dark:text-neutral-400">
                 {project.description}
               </p>
 
-              <div className="mt-auto flex flex-wrap gap-2 relative">
+              <div className="relative mt-auto flex flex-wrap gap-2">
                 {skills
                   .filter((skill) => project.skills.includes(skill.title))
                   .map((skill) => (
@@ -132,7 +132,6 @@ export const Projects = ({
                             width={16}
                             height={16}
                             className="h-4 w-4"
-
                           />
                         </div>
                       </TooltipTrigger>
